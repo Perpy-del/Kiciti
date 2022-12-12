@@ -148,6 +148,7 @@ body {
     }
 
     #create_btn:hover {
+        transition: 300ms;
         background: #04254b;
     }
 }

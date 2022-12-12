@@ -120,12 +120,11 @@ body {
     .form_container {
         width: 50%;
         margin: 0 auto;
-        gap: 2rem
-        ;
+        gap: 2rem;
     }
 
     .main_container {
-        height: 60rem;
+        height: 55rem;
         background-clip: border-box;
     }
 
@@ -136,7 +135,7 @@ body {
 
     
     .input_field:hover {
-        transition: 500ms;
+        transition: 300ms;
         border: 2px solid #0D62C6;
     }
 

@@ -1,43 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
 import klogo from '../Login/images/Kiciti Icon.svg';
-import email from '../Login/images/email_icon.svg';
-import password from '../Login/images/password_icon.svg';
+import Email from '../Login/images/email_icon.svg';
+import Password from '../Login/images/password_icon.svg';
 import facebook from '../Login/images/facebook_icon.svg';
 import google from '../Login/images/google_icon.svg';
 
 const Login = () => {
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
+    const [error, setError]=useState(false)
+    
+    const handleSubmit=(e)=> {
+        e.preventDefault();
+        if( email.length===0 || password.length < 8) {
+            setError(true)
+        }
+        if(email&&password)
+        {
+        console.log("Email", email, "Password", password)
+        }
+    }
     return (
         <div className='container'>
             <img src={klogo} alt="Kiciti logo" id='klogo'/>
             <h1>Welcome Back!</h1>
             <h4>Log In to your existing Kiciti Account</h4>
-            <form action='' className='f_container'>
+            <form action='' onSubmit={handleSubmit} className='f_container'>
                 <div className='form_content'>
-                    <img src={email} alt="email_icon" />
-                    <input type="email" id='email' placeholder='Email' />
+                    <img src={Email} alt="email_icon" />
+                    <input onChange={e=>setEmail(e.target.value)} type="email" id='email' placeholder='Email' />
                 </div>
 
                 <div className='form_content'>
-                    <img src={password} alt="password_icon" />
-                    <input type="password" id='password' placeholder='Password' />
+                    <img src={Password} alt="password_icon" />
+                    <input onChange={e=>setPassword(e.target.value)} type="password" id='password' placeholder='Password' />
                 </div>
+                {error&&(password.length<8||email<=0)?
+                <label>Invalid Email address or Password!</label>:""}
 
                 <Link id='forgot_password'> Forgot Password </Link>
 
                 <p>or connect using</p>
 
                 <div className='socials'>
-                    <div className='facebook_identifier'>
+                    <Link className='facebook_identifier'>
                         <img src={facebook} alt="Facebook_icon" />
                         <h5>facebook</h5>
-                    </div>
+                    </Link>
 
-                    <div className='google_identifier'>
+                    <Link className='google_identifier'>
                         <img src={google} alt="Google_icon" />
                         <h5>Google</h5>
-                    </div>
+                    </Link>
                 </div>
 
                 <button id='create_btn'>

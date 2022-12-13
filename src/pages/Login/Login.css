@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    height: 50rem;
+    padding: 1.5rem;
+    background-image: url(./images/background_img.svg);
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#klogo{
+    width: 1.5rem;
+    align-self: flex-start;
+    padding-bottom: 0.5rem;
+}
+
+.container h1 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #1F1D1D;
+    padding-bottom: 0.5rem;
+}
+
+.container h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1F1D1D;
+    margin-bottom: 0.5rem;
+}
+
+.f_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    padding: 0.3rem 1.5rem; 
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.form_content input {
+    border: none;
+    outline: none;
+    padding: 0.4rem 0;
+    font-family: 'Montserrat';
+    width: 40rem;
+}
+
+.form_content img {
+    width: 1rem;
+}
+
+#forgot_password {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+    color: blue;
+}
+
+p {
+    margin: 2rem 0;
+    font-weight: 600;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.facebook_identifier, .google_identifier {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.facebook_identifier img, .google_identifier img {
+    width: 1rem;
+}
+
+.facebook_identifier {
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: white;
+    border-radius: 4px;
+}
+
+.google_identifier {
+    padding: 0.5rem 1rem;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+}
+
+@media screen and (min-width: 900px) {
+    .f_container {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    .container h4 {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+
+    .form_content {
+        margin-top: 2.5rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    #forgot_password {
+        font-size: 1rem;
+        text-decoration: none;
+        margin-top: 0.8rem;
+    }
+
+    #forgot_password:hover {
+        text-decoration: underline;
+        color: rgb(10, 10, 83);
+    }
+
+    .socials {
+        margin-bottom: 2.5rem;
+    }
+
+    .facebook_identifier {
+        padding: 1rem 2.5rem;
+        background-color: blue;
+        color: white;
+        font-size: 1.5rem;
+        border-radius: 4px;
+    }
+    
+    .google_identifier {
+        padding: 1rem 2.5rem;
+        background-color: red;
+        color: white;
+        border-radius: 4px;
+        font-size: 1.5rem;
+    }
+
+    .facebook_identifier img, .google_identifier img {
+        width: 1.5rem;
+    }
+
+    .facebook_identifier, .google_identifier {
+        gap: 0.8rem;
+    }
+}

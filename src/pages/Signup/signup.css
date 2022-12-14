@@ -66,6 +66,15 @@ body {
     width: 40rem;
 }
 
+.input_field select {
+    color: #807d7d;
+    border: none;
+    outline: none;
+    padding: 0.4rem 0;
+    font-family: 'Montserrat';
+    width: 40rem;
+}
+
 label {
     color: #DE5C5C;
     font-weight: 700;
@@ -103,7 +112,6 @@ label > ul > li {
     padding: 0.5rem 0;
     margin: 1rem auto;
 }
-
 
 #login {
     font-weight: 700;

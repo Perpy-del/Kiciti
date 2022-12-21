@@ -28,22 +28,31 @@ const Signup = () => {
         }
         if(fname&&lname&&email&&password&&cpassword&&country&&gender&&username&&dob)
         {
-        console.log("Username", username, "First Name", fname, "Last Name", lname, "Email", email, "Password", password, "Country", country, "Gender", gender, "Confirm Password", cpassword, "Date of Birth", dob)
+        // console.log("Username", username, "First Name", fname, "Last Name", lname, "Email", email, "Password", password, "Country", country, "Gender", gender, "Confirm Password", cpassword, "Date of Birth", dob)
         }
 
-        const response = await fetch('http://localhost:3001/api/signup', {
+        const response = await fetch('http://34.228.198.103/api/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username, fname, lname, email, password, cpassword, country, gender, dob,
+                username: username,
+                first_name: fname,
+                last_name: lname,
+                email: email,
+                password: password,
+                country: country,
+                gender: gender.toLowerCase(),
+                dob: dob
             })
-        })
+        });
 
-        const data = await response.json()
-
-        console.log(data)
+        const data = await response.json();
+        // Get user authentication token
+        const user_token = data["X-auth-token"]
+        // Save to local storage
+        localStorage.setItem("X-auth-token", user_token);
     }
 
     return (
@@ -52,7 +61,7 @@ const Signup = () => {
             <h1>Let's Get Started!</h1>
             <h4>Create An Account with Kiciti</h4>
             <form action='' onSubmit={handleSubmit} className='form_container'>
-            <div className='input_field'>
+                <div className='input_field'>
                     <img src={user} alt="user_icon" />
                     <input onChange={e=>setUsername(e.target.value)} type="text" id='username' placeholder='Username' onKeyUp="filledInput()"/>
                 </div>

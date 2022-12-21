@@ -7,6 +7,7 @@ import location from '../../assets/images/location_icon.svg'
 import Gender from '../../assets/images/gender_icon.svg'
 import Password from '../../assets/images/password_icon.svg'
 import DOB from './images/date_icon.svg'
+import chevron from './images/arrow_back.svg'
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
@@ -14,7 +15,6 @@ const Signup = () => {
     const [lname, setLName]=useState('')
     const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
-    const [cpassword, setCPassword]=useState('')
     const [country, setCountry]=useState('')
     const [gender, setGender]=useState('')
     const [username, setUsername]=useState('')
@@ -23,12 +23,12 @@ const Signup = () => {
 
     async function handleSubmit (e) {
         e.preventDefault();
-        if(username.length===0 || fname.length===0 || lname.length===0 || email.length===0 || password.length < 8 || country===0 || gender.length===0 || cpassword !== password || dob.length===0) {
+        if(username.length===0 || fname.length===0 || lname.length===0 || email.length===0 || password.length < 8 || country===0 || gender.length===0 || dob.length===0) {
             setError(true)
         }
-        if(fname&&lname&&email&&password&&cpassword&&country&&gender&&username&&dob)
+        if(fname&&lname&&email&&password&&country&&gender&&username&&dob)
         {
-        console.log("Username", username, "First Name", fname, "Last Name", lname, "Email", email, "Password", password, "Country", country, "Gender", gender, "Confirm Password", cpassword, "Date of Birth", dob)
+        console.log("Username", username, "First Name", fname, "Last Name", lname, "Email", email, "Password", password, "Country", country, "Gender", gender, "Date of Birth", dob)
         }
 
         const response = await fetch('http://localhost:3001/api/signup', {
@@ -37,7 +37,7 @@ const Signup = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username, fname, lname, email, password, cpassword, country, gender, dob,
+                username, fname, lname, email, password, country, gender, dob,
             })
         })
 
@@ -49,6 +49,10 @@ const Signup = () => {
     return (
         <div className='main_container'>
             <img src={Kiciti_logo} alt="Kiciti Logo" id='kiciti_logo'/>
+            <Link to='/' className='prev_page'>
+                <img src={chevron} alt='chevron-back' />
+                <h3>Back to previous page</h3>
+            </Link>
             <h1>Let's Get Started!</h1>
             <h4>Create An Account with Kiciti</h4>
             <form action='' onSubmit={handleSubmit} className='form_container'>
@@ -318,13 +322,6 @@ const Signup = () => {
                         <li>At least 8 characters</li>
                     </ul>
                 </label>:""}
-                
-                <div className='input_field'>
-                    <img src={Password} alt="password_icon" />
-                    <input onChange={e=>setCPassword(e.target.value)} type="password" id='cpassword' placeholder='Confirm Password' onKeyUp="filledInput()"/>
-                </div>
-                {error&&cpassword!==password?
-                <label>Please ensure the passwords match</label>:""}
 
                 <button type='submit' id='create_btn'>
                     CREATE

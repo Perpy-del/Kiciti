@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(252, 242, 244);
+    margin: 1rem 0.5rem;
+}
+
+.profile_container {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.top_content {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.top_content h4 {
+    color: #333333;
+    padding-top: 0.3rem;
+}
+
+.mid-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+.mid-content h1 {
+    margin-bottom: 0.5rem;
+}
+
+.mid-content > h4 {
+    margin: 0.3rem 0;
+    text-align: left;
+}
+
+#edit_profile {
+    margin-top: 2rem;
+    padding: 0.8rem 1rem;
+    border: 3px solid #0D62C6;
+    box-shadow: 0px 0px 4px #0D62C6;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #0D62C6;
+    font-weight: 700;
+    width: 25rem;
+    margin: 2rem auto 0;
+}
+
+.activity h2 {
+    color: #0b4586;
+    padding-bottom: 1rem;
+    text-decoration: underline;
+    text-decoration-color: orangered;
+    text-decoration-thickness: 4px;
+}
+
+.activity div {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#posts {
+    color: white;
+    background-color: #0b4586;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: none;
+    width: 8rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#likes {
+    color: #0b4586;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 3px solid #0b4586;
+    width: 8rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#rooms {
+    color: #0b4586;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    border: 3px solid #0b4586;
+    width: 8rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.post_view {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post_view img {
+    width: 3rem;
+}
+
+#more {
+    border: none;
+    margin-left: 5rem;
+}
+
+#more img {
+    width: 1rem;
+}
+
+.post_view div {
+    display: flex;
+    flex-direction: column;
+}
+
+.post_view > div > h6 {
+    color: #6b6a6a;
+    margin: 0.1rem 0;
+    align-self: flex-start;
+}
+
+#comment {
+    color: #6b6a6a;
+    margin: 0.1rem 0;
+    text-align: left;
+}
+
+.post_view > div > h5 {
+    margin: 0.1rem 0;
+    align-self: flex-start;
+}
+
+@media screen and (min-width: 900px) {
+
+    .profile_container {
+        margin: 2rem auto;
+        border: 1px solid #cccc;
+        border-bottom: none;
+        width: 60%;
+        padding: 2rem;
+    }
+
+    .top_content {
+        margin: 2rem 0 0.5rem;
+    }
+
+    .top_content div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #edit_profile {
+        margin-top: 2rem;
+        padding: 0.8rem 1rem;
+        border: 3px solid #0D62C6;
+        box-shadow: 0px 0px 4px #0D62C6;
+        border-radius: 3px;
+        text-decoration: none;
+        color: #0D62C6;
+        font-size: 1.3rem;
+        font-weight: 700;
+        width: 40rem;
+        margin: 2rem auto;
+
+    }
+
+    #posts, #likes, #rooms {
+        width: 15rem;
+    }
+
+    .activity div {
+        margin-bottom: 2.5rem;
+    }
+
+    #more {
+        border: none;
+        margin-left: 25rem;
+    }
+    
+    #more img {
+        width: 1.5rem;
+    }
+}

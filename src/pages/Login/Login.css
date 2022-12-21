@@ -6,15 +6,15 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-image: url(./images/background_img.svg);
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
 }
 
 .container {
     height: 50rem;
     padding: 1.5rem;
-    background-image: url(./images/background_img.svg);
-    background-color: rgb(0, 0, 0);
-    background-position: center;
-    background-size: cover;
     display: flex;
     flex-direction: column;
 }
@@ -22,7 +22,7 @@ body {
 #klogo{
     width: 1.5rem;
     align-self: flex-start;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .container h1 {
@@ -30,6 +30,11 @@ body {
     font-size: 24px;
     color: #1F1D1D;
     padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.container h5 {
+    text-align: center;
 }
 
 .container h4 {
@@ -37,6 +42,7 @@ body {
     font-size: 16px;
     color: #1F1D1D;
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .f_container {
@@ -54,6 +60,10 @@ body {
     padding: 0.3rem 1.5rem; 
     width: 100%;
     margin-top: 1.5rem;
+}
+
+.f_container p {
+    text-align: center;
 }
 
 .form_content input {

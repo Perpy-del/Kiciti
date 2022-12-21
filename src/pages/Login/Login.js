@@ -13,15 +13,32 @@ const Login = () => {
     const [password, setPassword]=useState('')
     const [error, setError]=useState(false)
     
-    const handleSubmit=(e)=> {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if( email.length===0 || password.length < 8) {
             setError(true)
         }
         if(email&&password)
         {
-        console.log("Email", email, "Password", password)
+        // console.log("Email", email, "Password", password)
         }
+
+        const response = await fetch('http://34.228.198.103/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user: email,
+                password: password,
+            })
+        });
+
+        const data = await response.json();
+        // Get user authentication token
+        const user_token = data["X-auth-token"]
+        // Save to local storage
+        localStorage.setItem("X-auth-token", user_token);
     }
     return (
         <div className='container'>

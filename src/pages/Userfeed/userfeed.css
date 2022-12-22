@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.feed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0D62C6;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.feed-header div {
+    display: flex;
+    gap: 1rem;
+}
+
+.feed-header h3 {
+    color: white;
+}
+
+.maincontainer {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.share {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #ccc; 
+}
+
+.share input {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #0D62C6;
+    border-radius: 3rem;
+    width: 24rem;
+    color: #333333;
+    font-weight: 600;
+}
+
+.share img {
+    width: 2.3rem;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.post img {
+    border: 3px solid #0D62C6;
+    border-radius: 5rem;
+}
+
+.post div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-left: 2rem;
+}
+
+#ellipsis {
+    border: none;
+    background-color: #ccc;
+    margin-left: 8.5rem;
+}
+
+.post > div > h6 {
+    color: #333333;
+}
+
+#comments {
+    color: black;
+    font-size: 12px;
+}
+
+.social-icon {
+    display: flex;
+    margin: 0 auto;
+    gap: 2rem;
+    margin: 0 0 3rem 7rem;
+}
+
+.social-icon div {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.2rem;
+}
+
+#profile {
+    border-radius: 10rem;
+    width: 5.3rem;
+}
+
+#babypic {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+#ellipsis2 {
+    border: none;
+    background-color: #ccc;
+    margin-left: 11rem;
+}
+
+@media screen and (min-width: 900px) {
+    
+    .maincontainer {
+        width: 60%;
+        border: 1px solid #ccc;
+        padding: 2rem;
+    }
+
+    #ellipsis {
+        border: none;
+        background-color: #ccc;
+        margin-left: 22rem;
+    }
+
+    #ellipsis2 {
+        border: none;
+        background-color: #ccc;
+        margin-left: 20rem;
+    }
+
+    #babypic {
+        width: 90%;
+        margin: 2rem 3rem;
+        text-align: center;
+    }
+
+    .post {
+        gap: 2rem;
+    }
+
+    .social-icon {
+        margin: 1rem 0 3rem 9rem;
+    }
+
+}

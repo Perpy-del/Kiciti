@@ -62,7 +62,7 @@ const Login = () => {
                 {error&&(password.length<8||email<=0)?
                 <label>Invalid Email address or Password!</label>:""}
 
-                <Link id='forgot_password'> Forgot Password </Link>
+                <Link to="/Forgotpassword" id='forgot_password'> Forgot Password </Link>
 
                 <p>or connect using</p>
 

@@ -7,4 +7,123 @@
 .editprofile {
     width: 90%;
     margin: 2rem;
+    /* height: 100vh; */
+}
+
+.top_edit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.top_edit h2 {
+    font-size: 1.2rem;
+    color:#0D62C6;
+}
+
+.top_edit img:hover {
+    background-color: red;
+    transition: 0.3s ease-in-out;
+}
+
+.form_con input, #gen {
+    border: 1px solid #0D62C6;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form_con textarea {
+    border: 1px solid #0D62C6;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#submit-btn {
+    border: none;
+    background-color: #0D62C6;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#profile {
+    background-color: white;
+}
+
+#change_password {
+    width: 100%;
+    background-color: #0D62C6;
+    color: white;
+}
+
+.changepassword {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.changepassword input {
+    margin: 0.5rem 0;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #0D62C6;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#change_pwd {
+    font-size: 1.5rem;
+}
+
+#reset_pwd {
+    background-color: #0D62C6;
+    color: white;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 900px) {
+    .editprofile {
+        width: 50%;
+        margin: 2rem auto;
+    }
+
+    .changepassword {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .changepassword input {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .changepassword label {
+        margin: 1rem auto 0.5rem;
+    }
+
+    #change_pwd {
+        font-size: 1.5rem;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #reset_pwd {
+        margin-top: 1.5rem;
+    }
 }

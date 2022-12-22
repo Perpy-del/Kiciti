@@ -51,6 +51,7 @@ body {
     box-shadow: 0px 0px 4px #0D62C6;
     border-radius: 3px;
     text-decoration: none;
+    text-align: center;
     color: #0D62C6;
     font-weight: 700;
     width: 25rem;
@@ -63,6 +64,7 @@ body {
     text-decoration: underline;
     text-decoration-color: orangered;
     text-decoration-thickness: 4px;
+    text-align: center;
 }
 
 .activity div {

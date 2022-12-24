@@ -49,6 +49,13 @@ const Signup = () => {
         });
 
         const data = await response.json();
+
+        // Get User ID
+        localStorage.setItem('user_id', data.user._id);
+
+        // How to get the user ID
+        // const userid = localStorage.getItem('user_id');
+
         // Get user authentication token
         const user_token = data["X-auth-token"]
         // Save to local storage

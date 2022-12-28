@@ -437,6 +437,7 @@
     
     .first-container > h1 {
         font-size: 1.5rem;
+        width: 80%;
     }
     
     .first-container > h3 {

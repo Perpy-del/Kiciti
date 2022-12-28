@@ -1,0 +1,80 @@
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 60rem;
+    background-color: rgb(94, 92, 92);
+}
+
+.verify-container {
+    background-color: white;
+    margin: 10rem 2rem;
+    padding: 2rem 1.5rem 4rem;
+    border-radius: 8px;
+}
+
+.kiciti {
+    margin-bottom: 2rem;
+}
+
+.kiciti h2 {
+    color: #0D62C6;
+    font-size: 1.2rem;
+}
+
+.kiciti {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#kiciti-img img {
+    width: 1.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.verify-container h3 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color:rgb(94, 92, 92);
+    margin: 1rem 0 3rem;
+}
+
+#verify {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #0D62C6;
+    padding: 0.75rem 7.5rem;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 900px) {
+    .verify-container {
+        width: 40%;
+        margin: 7rem auto 5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .verify-container h3 {
+        font-size: 1.2rem;
+    }
+
+    #verify {
+        padding: 1rem 10rem;
+        font-size: 1.4rem;
+    }
+}

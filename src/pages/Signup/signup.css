@@ -122,6 +122,7 @@ label > ul > li {
 }
 
 #create_btn {
+    text-decoration: none;
     background: #5799E8;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
@@ -130,10 +131,10 @@ label > ul > li {
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-    width: 12rem;
+    /* width: 12rem; */
     border: none;
     margin: 0 auto;
-    padding: 0.5rem 0;
+    padding: 1rem 5rem;
     margin: 1rem auto;
 }
 
@@ -195,7 +196,8 @@ label > ul > li {
     }
 
     #create_btn {
-        width: 20rem;
+        /* width: 20rem; */
+        padding: 1rem 10rem;
         margin: 2rem auto;
     }
 

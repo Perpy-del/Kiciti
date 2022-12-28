@@ -308,7 +308,8 @@
 
     .onboarding {
         display: flex;
-        padding-top: 2rem;
+        margin-top: 3rem;
+        /* align-content: center; */
     }
     
     #signin {

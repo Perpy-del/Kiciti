@@ -50,7 +50,7 @@ const Home = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink id='navlinks'>
+            <NavLink to='/About' id='navlinks'>
               About
             </NavLink>
           </li>
@@ -93,7 +93,7 @@ const Home = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink id='navlinks'>
+            <NavLink to='/About' id='navlinks'>
               About
             </NavLink>
           </li>

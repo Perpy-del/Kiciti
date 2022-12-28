@@ -40,7 +40,7 @@
     padding: 0.5rem 1.5rem;
     border: 2px solid #0D62C6;
     border-radius: 3rem;
-    width: 24rem;
+    width: 21rem;
     color: #333333;
     font-weight: 600;
 }
@@ -115,6 +115,27 @@
 
 @media screen and (min-width: 900px) {
     
+    .feed-header {
+        padding: 2rem 3rem;
+    }
+
+    .feed-header div {
+        gap: 2rem;
+    }
+
+    .share {
+        gap: 0.3rem;
+    }
+
+    .share img {
+        width: 2.5rem;
+    }
+
+    .share input {
+        padding: 0.75rem 2rem;
+        width: 35rem;
+    }
+
     .maincontainer {
         width: 60%;
         border: 1px solid #ccc;

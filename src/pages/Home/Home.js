@@ -25,11 +25,11 @@ const Home = () => {
               <img src={kicitilogo} alt="Kicitilogo" />
             </Link>
             <h2>kiciti</h2>
-            </div>
+          </div>
 
-            <div>
+          <div>
             <img src={menu} alt='menu-icon' onClick={handleNav}/>
-            </div>
+          </div>
         </div>
 
         <div className={nav ? 'nav-links' : 'nav-others'}>

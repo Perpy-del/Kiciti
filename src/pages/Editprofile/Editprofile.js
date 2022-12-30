@@ -10,7 +10,7 @@ const Editprofile = () => {
             <h2>Edit Profile</h2>
             <img src={closebtn} alt='close' />
           </div>
-          <form className='form_con'>
+          <form className='form_con' method="post" enctype="multipart/form-data">
             <label htmlFor='fname'>First Name</label> <br />
             <input type='text' id='fname' name='fname' /> <br/>
             <label htmlFor='mname'>Middle Name</label> <br />
@@ -27,8 +27,10 @@ const Editprofile = () => {
             </select> <br />
             <label htmlFor='dob'>Date of Birth</label> <br />
             <input type='date' id='dob' name='dob' /> <br/>
+            
             <label htmlFor='profile'>Profile Picture</label> <br />
-            <input type="file" id='profile' name='profile' /> <br/>
+            <input type="file" id='profile' name='pfp' /> <br/>
+            
             <label htmlFor='about'>About</label> <br />
             <textarea id='about' name='about' rows='4' cols="30" /> <br/>
             <input type='submit' id='submit-btn' value='Save Changes' /> <br/>

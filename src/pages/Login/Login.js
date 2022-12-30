@@ -15,14 +15,14 @@ const Login = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if( email.length===0 || password.length < 8) {
+        if( email.length===0 || password.length < 5) {
             setError(true)
         }
         if(email&&password)
         {
         // console.log("Email", email, "Password", password)
         }
-
+        
         const response = await fetch('http://34.228.198.103/api/login', {
             method: 'POST',
             headers: {
@@ -34,15 +34,22 @@ const Login = () => {
             })
         });
 
-        const data = await response.json();
+        // Wrong email or password
+        if (response.status === 400) {
+            console.log("Email or password incorrect");
+        } else {
+            const data = await response.json();
 
-        // Get User ID
-        localStorage.setItem('user_id', data.user._id);
-        
-        // Get user authentication token
-        const user_token = data["X-auth-token"]
-        // Save to local storage
-        localStorage.setItem("X-auth-token", user_token);
+            // Get User ID
+            localStorage.setItem('user_id', data.user._id);
+            
+            // Get user authentication token
+            const user_token = data["X-auth-token"]
+            // Save to local storage
+            localStorage.setItem("X-auth-token", user_token);
+
+            // redirect to feed page and login user
+        }
     }
     return (
         <div className='container'>
@@ -53,6 +60,7 @@ const Login = () => {
             </Link>
             <h1>Welcome Back!</h1>
             <h4>Log In to your existing Kiciti Account</h4>
+            
             <form action='' onSubmit={handleSubmit} className='f_container'>
                 <div className='form_content'>
                     <img src={Email} alt="email_icon" />
@@ -82,9 +90,10 @@ const Login = () => {
                     </Link>
                 </div>
 
-                <button id='create_btn'>
+                <input id='create_btn' type='submit' value='LOG IN'/>
+                {/* <button id='create_btn' type='submit'>
                     LOG IN
-                </button>
+                </button> */}
             </form>
 
             <h5>Don't have an account? <Link to="/" id='login'>Sign Up</Link></h5>

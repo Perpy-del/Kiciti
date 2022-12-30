@@ -48,18 +48,22 @@ const Signup = () => {
             })
         });
 
-        const data = await response.json();
+        // Wrong email or password
+        if (response.status === 400) {
+            console.log("Email or password incorrect");
+        } else {
+            const data = await response.json();
 
-        // Get User ID
-        localStorage.setItem('user_id', data.user._id);
+            // Get User ID
+            localStorage.setItem('user_id', data.user._id);
+            
+            // Get user authentication token
+            const user_token = data["X-auth-token"]
+            // Save to local storage
+            localStorage.setItem("X-auth-token", user_token);
 
-        // How to get the user ID
-        // const userid = localStorage.getItem('user_id');
-
-        // Get user authentication token
-        const user_token = data["X-auth-token"]
-        // Save to local storage
-        localStorage.setItem("X-auth-token", user_token);
+            // redirect to feed page and login user
+        }
     }
 
     return (

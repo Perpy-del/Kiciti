@@ -33,6 +33,10 @@ const Editprofile = () => {
             </select> <br />
             <label htmlFor='dob'>Date of Birth</label> <br />
             <input type='date' id='dob' name='dob' /> <br/>
+            
+            <label htmlFor='profile'>Profile Picture</label> <br />
+            <input type="file" id='profile' name='pfp' /> <br/>
+            
             <label htmlFor='about'>About</label> <br />
             <textarea id='about' name='about' rows='4' cols="30" /> <br/>
             <input type='submit' id='submit-btn' value='Save Changes' /> <br/>

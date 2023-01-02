@@ -95,9 +95,6 @@ const Login = () => {
                 </div>
 
                 <input id='create_btn' type='submit' value='LOG IN'/>
-                {/* <button id='create_btn' type='submit'>
-                    LOG IN
-                </button> */}
             </form>
 
             <h5>Don't have an account? <Link to="/" id='login'>Sign Up</Link></h5>

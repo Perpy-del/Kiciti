@@ -58,8 +58,9 @@
     font-weight: 700;
 }
 
-#profile {
+#photo {
     background-color: white;
+    width: 100%;
 }
 
 #change_password {
@@ -126,4 +127,5 @@
     #reset_pwd {
         margin-top: 1.5rem;
     }
+
 }

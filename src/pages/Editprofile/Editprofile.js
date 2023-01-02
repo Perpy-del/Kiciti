@@ -1,6 +1,7 @@
 import React from 'react'
 import closebtn from './images/closebtn.svg'
 import './editProfile.css'
+import { Link } from 'react-router-dom'
 
 const Editprofile = () => {
     return (
@@ -8,9 +9,14 @@ const Editprofile = () => {
         <div className='editprofile'>
           <div className='top_edit'>
             <h2>Edit Profile</h2>
-            <img src={closebtn} alt='close' />
-          </div>
+            <Link to='/profile'><img src={closebtn} alt='close' /></Link>
+          </div> 
           <form className='form_con'>
+            <div>
+              <h4> Change Profile Picture </h4> <br />
+              <label htmlFor='photo'>Profile Picture</label> <br />
+              <input type="file" id='photo' name='profile' /> <br/>
+            </div> <br /> <hr/> <br/> <br/>
             <label htmlFor='fname'>First Name</label> <br />
             <input type='text' id='fname' name='fname' /> <br/>
             <label htmlFor='mname'>Middle Name</label> <br />
@@ -27,8 +33,6 @@ const Editprofile = () => {
             </select> <br />
             <label htmlFor='dob'>Date of Birth</label> <br />
             <input type='date' id='dob' name='dob' /> <br/>
-            <label htmlFor='profile'>Profile Picture</label> <br />
-            <input type="file" id='profile' name='profile' /> <br/>
             <label htmlFor='about'>About</label> <br />
             <textarea id='about' name='about' rows='4' cols="30" /> <br/>
             <input type='submit' id='submit-btn' value='Save Changes' /> <br/>

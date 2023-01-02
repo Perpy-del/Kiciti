@@ -41,17 +41,17 @@ const Home = () => {
           </li>
           <li>
             <NavLink to='/userfeed' id='navlinks'>
-              Feed
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/userfeed' id='navlinks'>
               Posts
             </NavLink>
           </li>
           <li>
             <NavLink to='/About' id='navlinks'>
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/' id='navlinks'>
+              Blog
             </NavLink>
           </li>
         </ul>
@@ -84,17 +84,17 @@ const Home = () => {
           </li>
           <li>
             <NavLink to='/userfeed' id='navlinks'>
-              Feed
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/userfeed' id='navlinks'>
               Posts
             </NavLink>
           </li>
           <li>
             <NavLink to='/About' id='navlinks'>
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/' id='navlinks'>
+              Blog
             </NavLink>
           </li>
         </ul>

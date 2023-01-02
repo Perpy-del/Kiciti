@@ -68,6 +68,10 @@ const Login = () => {
 
                 <Link to="/Forgotpassword" id='forgot_password'> Forgot Password </Link>
 
+                <button type='submit' id='create_btn'>
+                    LOG IN
+                </button>
+                
                 <p>or connect using</p>
 
                 <div className='socials'>
@@ -82,9 +86,6 @@ const Login = () => {
                     </Link>
                 </div>
 
-                <button id='create_btn'>
-                    LOG IN
-                </button>
             </form>
 
             <h5>Don't have an account? <Link to="/" id='login'>Sign Up</Link></h5>

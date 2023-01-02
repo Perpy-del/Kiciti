@@ -8,5 +8,6 @@ import Forgotpassword from './Forgotpassword/Forgotpassword';
 import Verifyuser from './Verification/Verifyuser';
 import Error from './Error/Error';
 import About from './About/About';
+import Success from './Success/Success';
 
-export { Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About } 
+export { Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About, Success } 

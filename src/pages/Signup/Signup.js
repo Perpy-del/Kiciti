@@ -339,9 +339,7 @@ const Signup = () => {
                     </ul>
                 </label>:""}
 
-                <Link to='/Verifyuser' id='create_btn'>
-                    CREATE
-                </Link>
+                <input type="submit" value="CREATE" id="create_btn" />
             </form>
 
             <h5>Already have an account? 

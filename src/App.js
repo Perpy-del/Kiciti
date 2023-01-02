@@ -1,6 +1,6 @@
 // import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About } from "./pages/index";
+import {Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About, Success } from "./pages/index";
 import React from 'react'
 
 import Footer from './Footer/Footer'
@@ -20,6 +20,7 @@ const App = () => {
           <Route path = "Verifyuser" element = {<Verifyuser />} />
           <Route path = "Error" element = {<Error />} />
           <Route path = "About" element = {<About />} />
+          <Route path = "Success" element = {<Success />} />
         </Routes>
         <Footer />
       </BrowserRouter>

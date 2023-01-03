@@ -138,6 +138,10 @@ label > ul > li {
     margin: 1rem auto;
 }
 
+#create_btn:hover {
+    cursor: pointer;
+}
+
 #login {
     font-weight: 700;
     color: #0D62C6;
@@ -217,5 +221,6 @@ label > ul > li {
     #create_btn:hover {
         transition: 300ms;
         background: #04254b;
+        cursor: pointer;
     }
 }

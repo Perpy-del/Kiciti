@@ -54,6 +54,7 @@
     border: none;
     background-color: #0D62C6;
     color: white;
+    padding: 1rem;
     font-size: 1rem;
     font-weight: 700;
 }
@@ -126,6 +127,15 @@
 
     #reset_pwd {
         margin-top: 1.5rem;
+    }
+
+    #submit-btn {
+        border: none;
+        background-color: #0D62C6;
+        color: white;
+        font-size: 1rem;
+        padding: 1rem;
+        font-weight: 700;
     }
 
 }

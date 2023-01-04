@@ -71,7 +71,7 @@ const Login = () => {
                     <img src={Password} alt="password_icon" />
                     <input onChange={e=>setPassword(e.target.value)} type="password" id='password' placeholder='Password' />
                 </div>
-                {error&&(password.length<8||email<=0)?
+                {error&&(password.length<5||email<=0)?
                 <label>Invalid Email address or Password!</label>:""}
 
                 <Link to="/Forgotpassword" id='forgot_password'> Forgot Password </Link>
@@ -97,7 +97,7 @@ const Login = () => {
                 <input id='create_btn' type='submit' value='LOG IN'/>
             </form>
 
-            <h5>Don't have an account? <Link to="/" id='login'>Sign Up</Link></h5>
+            <h5>Don't have an account? <Link to="/Loggedin" id='login'>Sign Up</Link></h5>
         </div>
     )
 }

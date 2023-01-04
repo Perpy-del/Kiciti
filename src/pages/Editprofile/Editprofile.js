@@ -1,9 +1,33 @@
-import React from 'react'
-import closebtn from './images/closebtn.svg'
-import './editProfile.css'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import closebtn from './images/closebtn.svg';
+import './editProfile.css';
+import { Link } from 'react-router-dom';
 
 const Editprofile = () => {
+  const [profile, setProfile] = useState({});
+  const handleFileChange = (e) => {
+    const img = {
+      preview: URL.createObjectURL(e.target.files[0]),
+      data: e.target.files[0],
+    };
+    setProfile(img);
+    console.log(setProfile());
+  }
+  const handleProfile = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('pfp', profile.data)
+    
+    const response = await fetch('http://34.228.198.103/api/users/63a0ebb4a73f55168ad68c7b/pfp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'image/*',
+      },
+      body: formData
+      
+    });
+  };
+    
     return (
       <>
         <div className='editprofile'>
@@ -11,12 +35,16 @@ const Editprofile = () => {
             <h2>Edit Profile</h2>
             <Link to='/profile'><img src={closebtn} alt='close' /></Link>
           </div> 
-          <form className='form_con'>
+          <form onSubmit={handleProfile} className='form_con'>
             <div>
               <h4> Change Profile Picture </h4> <br />
               <label htmlFor='photo'>Profile Picture</label> <br />
-              <input type="file" id='photo' name='profile' /> <br/>
+              <input onChange={(e) => {handleFileChange(e)}} type="file" id='pfp' name='pfp' /> <br/>
+              <input type='submit' value="Change Image" />
             </div> <br /> <hr/> <br/> <br/>
+          </form>
+
+          <form>
             <label htmlFor='fname'>First Name</label> <br />
             <input type='text' id='fname' name='fname' /> <br/>
             <label htmlFor='mname'>Middle Name</label> <br />
@@ -33,9 +61,6 @@ const Editprofile = () => {
             </select> <br />
             <label htmlFor='dob'>Date of Birth</label> <br />
             <input type='date' id='dob' name='dob' /> <br/>
-            
-            <label htmlFor='profile'>Profile Picture</label> <br />
-            <input type="file" id='profile' name='pfp' /> <br/>
             
             <label htmlFor='about'>About</label> <br />
             <textarea id='about' name='about' rows='4' cols="30" /> <br/>
@@ -55,6 +80,6 @@ const Editprofile = () => {
         </div>       
     </>
     )
-}
+};
 
-export default Editprofile
+export default Editprofile;

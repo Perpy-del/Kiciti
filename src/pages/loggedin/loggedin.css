@@ -1,0 +1,17 @@
+.icons {
+    display: flex;
+    gap: 5rem;
+    position: fixed;
+    top: 25rem;
+    left: 5rem;
+}
+
+
+@media screen and (min-width: 900px){
+    
+.icons {
+    display: flex;
+    gap: 3rem;
+}
+
+}

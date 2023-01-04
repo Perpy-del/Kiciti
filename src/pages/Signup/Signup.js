@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 import Kiciti_logo from '../../assets/images/Kiciti Icon.svg'
 import user from '../../assets/images/user_icon.svg'
@@ -11,15 +12,17 @@ import chevron from './images/arrow_back.svg'
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
-    const [fname, setFName]=useState('')
-    const [lname, setLName]=useState('')
-    const [email, setEmail]=useState('')
-    const [password, setPassword]=useState('')
-    const [country, setCountry]=useState('')
-    const [gender, setGender]=useState('')
-    const [username, setUsername]=useState('')
-    const [dob, setDOB]=useState('')
-    const [error, setError]=useState(false)
+    const [fname, setFName]=useState('');
+    const [lname, setLName]=useState('');
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
+    const [country, setCountry]=useState('');
+    const [gender, setGender]=useState('');
+    const [username, setUsername]=useState('');
+    const [dob, setDOB]=useState('');
+    const [error, setError]=useState(false);
+
+    const navigate = useNavigate();
 
     async function handleSubmit (e) {
         e.preventDefault();
@@ -63,6 +66,7 @@ const Signup = () => {
             localStorage.setItem("X-auth-token", user_token);
 
             // redirect to feed page and login user
+            navigate("/");
         }
     }
 

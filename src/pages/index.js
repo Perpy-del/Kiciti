@@ -11,4 +11,4 @@ import About from './About/About';
 import Success from './Success/Success';
 import Loggedin from './Loggedin/Loggedin';
 
-export { Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About, Success, Loggedin } 
+export { Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About, Success, Loggedin };

@@ -44,7 +44,7 @@ const Editprofile = () => {
             </div> <br /> <hr/> <br/> <br/>
           </form>
 
-          <form>
+          <form className='form_con'>
             <label htmlFor='fname'>First Name</label> <br />
             <input type='text' id='fname' name='fname' /> <br/>
             <label htmlFor='mname'>Middle Name</label> <br />
@@ -68,7 +68,7 @@ const Editprofile = () => {
           </form>
         </div>
 
-        <div className='changepassword'>
+        <form className='changepassword'>
           <label id='change_pwd'>Change Password</label> <br />
           <label htmlFor='old_password'>Old Password</label>
           <input type='password' id="old_password" /> 
@@ -77,7 +77,7 @@ const Editprofile = () => {
           <label htmlFor='cpassword'>Confirm Password</label>
           <input type='password' id="cpassword" /> 
           <input type='submit' id='reset_pwd' value='Reset Password' />
-        </div>       
+        </form>       
     </>
     )
 };

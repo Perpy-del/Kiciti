@@ -16,15 +16,27 @@ const Editprofile = () => {
   
   const handleProfile = async (e) => {
     e.preventDefault();
+
+    // Get User ID
+    const user_id = localStorage.getItem('user_id');
+    // Get user authentication token
+    const user_token = localStorage.getItem("X-auth-token");
+    
     const formData = new FormData();
     profile.data.filename = profile.data.name;
     delete profile.data.name;
     formData.append('pfp', profile.data);
     
-    const response = await fetch('http://34.228.198.103/api/users/63a0ebb4a73f55168ad68c7b/pfp', {
+    const response = await fetch(`http://34.228.198.103/api/users/${user_id}/pfp`, {
       method: 'POST',
+      headers: {
+        'X-auth-token': user_token
+      },
       body: formData
     });
+
+    // Notify user that pfp has been updated successfully
+    if (response.status === 201) {}
   };
     
     return (

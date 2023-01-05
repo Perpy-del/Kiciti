@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import { Link } from 'react-router-dom';
 import klogo from '../Login/images/Kiciti Icon.svg';
@@ -9,9 +10,11 @@ import google from '../Login/images/google_icon.svg';
 import chevron from '../Login/images/arrow_back.svg';
 
 const Login = () => {
-    const [email, setEmail]=useState('')
-    const [password, setPassword]=useState('')
-    const [error, setError]=useState(false)
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
+    const [error, setError]=useState(false);
+
+    const navigate = useNavigate();
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,6 +52,7 @@ const Login = () => {
             localStorage.setItem("X-auth-token", user_token);
 
             // redirect to feed page and login user
+            navigate("/");
         }
     }
     return (

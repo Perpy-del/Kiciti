@@ -4,27 +4,26 @@ import './editProfile.css';
 import { Link } from 'react-router-dom';
 
 const Editprofile = () => {
-  const [profile, setProfile] = useState({});
+  const [ profile, setProfile ] = useState({ preview: "", data: "" });
+  
   const handleFileChange = (e) => {
     const img = {
       preview: URL.createObjectURL(e.target.files[0]),
       data: e.target.files[0],
     };
     setProfile(img);
-    console.log(setProfile());
   }
+  
   const handleProfile = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('pfp', profile.data)
+    profile.data.filename = profile.data.name;
+    delete profile.data.name;
+    formData.append('pfp', profile.data);
     
     const response = await fetch('http://34.228.198.103/api/users/63a0ebb4a73f55168ad68c7b/pfp', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'image/*',
-      },
       body: formData
-      
     });
   };
     
@@ -34,14 +33,15 @@ const Editprofile = () => {
           <div className='top_edit'>
             <h2>Edit Profile</h2>
             <Link to='/profile'><img src={closebtn} alt='close' /></Link>
-          </div> 
-          <form onSubmit={handleProfile} className='form_con'>
+          </div>
+
+          <form onSubmit={handleProfile} encType="multipart/form-data" method="post" className='form_con'>
             <div>
               <h4> Change Profile Picture </h4> <br />
               <label htmlFor='photo'>Profile Picture</label> <br />
-              <input onChange={(e) => {handleFileChange(e)}} type="file" id='pfp' name='pfp' /> <br/>
+              <input onChange={handleFileChange} accept="image/*" type="file" id='pfp' name='pfp' /> <br/>
               <input type='submit' value="Change Image" />
-            </div> <br /> <hr/> <br/> <br/>
+            </div> <br /> <br/> <br/> <br/>
           </form>
 
           <form className='form_con'>

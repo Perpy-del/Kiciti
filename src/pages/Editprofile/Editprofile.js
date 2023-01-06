@@ -129,7 +129,8 @@ const Editprofile = () => {
     );
 
     // Notify user that pfp has been updated successfully
-    if (response.status === 201) {
+    if (response.status === 200) {
+      alert("Profile picture updated successfully");
       window.location.reload(true);
     }
   };

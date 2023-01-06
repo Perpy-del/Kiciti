@@ -1,40 +1,65 @@
 import React from 'react'
 import './userfeed.css'
 import { Link } from 'react-router-dom'
-import chevron from '../Login/images/arrow_back.svg';
 import profileimage from './images/newimages2.svg';
 import photo from './images/photo-library.svg';
 import help from './images/help_icon.svg';
 import search from './images/search_icon.svg';
 import comment from './images/comments-icon.svg';
 import fav from './images/favorite-icon.svg';
-import comm from './images/comments.svg';
 import baby from './images/newbaby.svg';
 import profile from './images/newimages.svg';
 import newimg from './images/newimages3.svg';
 import ellipsis from './images/mdi_ellipsis.svg';
+import notification from './images/notifications.svg';
+import logout from './images/logout.svg';
+import userprofile from './images/user_profile.png';
 
 const Userfeed = () => {
+  // const [ profile, setProfile ] = useState({ preview: "", data: "" });
+  
+  // const handleFileChange = (e) => {
+  //   const img = {
+  //     preview: URL.createObjectURL(e.target.files[0]),
+  //     data: e.target.files[0],
+  //   };
+  //   setProfile(img);
+  // }
+
   return (
     <>
-      <Link to='/' className='prev_page'>
-        <img src={chevron} alt='chevron-back' />
-        <h3>Back to previous page</h3>
-      </Link>
       <div className='feed-header'>
-        <img src={help} alt='help-icon' />
+        <Link><img src={help} alt='help-icon' /></Link>
         <h3> Feed </h3>
-        <div>
-          <img src={search} alt='search-icon' />
-          <img src={comm} alt='comment-icon' />
+        <div className='icon-set'>
+          <div>
+            <Link to='/'><img src={notification} alt='notification-icon' /></Link>
+          </div>
+          <div>
+            <Link><img src={notification} alt='notification-icon' /></Link>
+          </div>
+          <div>
+            <Link to='/profile'><img src={userprofile} alt='user-profile-icon' /></Link>
+          </div>
+          <div className='search'>
+            <img src={search} alt='search-icon' />
+            <input type='text' placeholder='Search'/>  
+          </div>
+        </div>
+        <div className='lg-icon'>
+          <Link to='/login' id='logout'>
+            <img src={logout} alt='logout-icon' />
+          </Link>
+          <h6 className='hide'>Logout</h6>
         </div>
       </div>
 
       <div className='maincontainer'>
         <div className='share'>
-          <img src={newimg} alt='profile-icon' />
+          <Link to='/editProfile' id='prof_img'><img src={newimg} alt='profile-icon' /></Link>
           <input type='text' placeholder='Share A Post' id='share' />
-          <img src={photo} alt='img' />
+          <button type='submit' id='ph_submit'> <img src={photo} alt='img' id='post_share' /> </button>
+          <button type='submit' id='share_button'>Share Post</button>
         </div>
 
         <div className='post'>
@@ -49,11 +74,11 @@ const Userfeed = () => {
         <div className='social-icon'>
           <div>
             <img src={fav} alt="favorite-icon" />
-            <h6>1,223</h6>
+            <h6>1,223 Likes</h6>
           </div>
           <div>
             <img src={comment} alt="comment" />
-            <h6>560</h6>
+            <h6>560 Comments</h6>
           </div>
         </div>
 
@@ -67,6 +92,16 @@ const Userfeed = () => {
           <img src={ellipsis} alt="ellipsis-icon" id='ellipsis2'/>
         </div>
         <img src={baby} alt="baby" id='babypic' />
+        <div className='social-icon'>
+          <div>
+            <img src={fav} alt="favorite-icon" />
+            <h6>1,223 Likes</h6>
+          </div>
+          <div>
+            <img src={comment} alt="comment" />
+            <h6>560 Comments</h6>
+          </div>
+        </div>
       </div>
     </>
   )

@@ -36,7 +36,9 @@ const Editprofile = () => {
     });
 
     // Notify user that pfp has been updated successfully
-    if (response.status === 201) {}
+    if (response.status === 201) {
+      alert('Profile updated successfully')
+    }
   };
     
     return (
@@ -52,7 +54,7 @@ const Editprofile = () => {
               <h4> Change Profile Picture </h4> <br />
               <label htmlFor='photo'>Profile Picture</label> <br />
               <input onChange={handleFileChange} accept="image/*" type="file" id='pfp' name='pfp' /> <br/>
-              <input type='submit' value="Change Image" />
+              <input onSubmit={handleProfile} type='submit' value="Change Image" id="change_img" />
             </div> <br /> <br/> <br/> <br/>
           </form>
 

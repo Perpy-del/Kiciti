@@ -124,6 +124,9 @@ const Userfeed = () => {
             <h6>560 Comments</h6>
           </div>
         </div>
+        <div>
+          <input type="text" placeholder="Add a Comment" id='add_comment' />
+        </div>
         <img src={baby} alt="baby" id='babypic' />
         
       </div>

@@ -101,6 +101,13 @@ input[type=date], input[type=submit], select {
     font-weight: 600;
 }
 
+#change_img {
+    background-color: #0D62C6;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 @media screen and (min-width: 900px) {
     .editprofile {
         width: 50%;

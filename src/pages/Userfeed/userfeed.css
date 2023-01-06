@@ -13,13 +13,19 @@
     margin-bottom: 3rem;
 }
 
-.feed-header div {
+#help {
+    display: none;
+}
+
+.icon-set {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .feed-header h3 {
     color: white;
+    font-size: 0.8rem;
 }
 
 .maincontainer {
@@ -27,54 +33,85 @@
     margin: 0 auto;
 }
 
+#i-set {
+    width: 1.2rem;
+}
+
 .share {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-bottom: 2px solid #ccc; 
 }
 
-.share input {
-    padding: 0.5rem 1.5rem;
+#share {
+    padding: 0.8rem 1.5rem;
     border: 2px solid #0D62C6;
     border-radius: 3rem;
-    width: 21rem;
+    width: 14rem;
     color: #333333;
     font-weight: 600;
 }
 
-.share img {
-    width: 2.3rem;
+#share_button {
+    border: 2px solid #0D62C6;
+    border-radius: 5px;
+    background-color: #0D62C6;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.3rem 1rem;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+.search input {
+    border: none;
+    outline: none;
+}
+
+#ph_submit {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .post {
     display: flex;
     align-items: center;
-    margin-bottom: 0.3rem;
+    justify-content: space-between;
+    margin-top: 3.5rem;
 }
 
-.post img {
+#profile {
     border: 3px solid #0D62C6;
     border-radius: 5rem;
-}
-
-.post div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-left: 2rem;
 }
 
 #ellipsis {
     border: none;
     background-color: #ccc;
-    margin-left: 8.5rem;
+    padding: 0.5rem;
+    border-radius: 3rem;
 }
 
 .post > div > h6 {
     color: #333333;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 #comments {
@@ -82,22 +119,53 @@
     font-size: 12px;
 }
 
+.primary_post {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.post_content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
 .social-icon {
     display: flex;
     margin: 0 auto;
     gap: 2rem;
-    margin: 0 0 3rem 7rem;
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+}
+
+#add_comment {
+    margin-left: 6rem;
+    padding: 0.5rem 1rem;
+    width: 20rem;
+    border: 1.5px solid #0D62C6;
+    border-radius: 30px;
+    font-size: 12px;
 }
 
 .social-icon div {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 0.2rem;
 }
 
+#prof_img > img {
+    width: 3rem;
+}
+
 #profile {
-    border-radius: 10rem;
+    border-radius: 50rem;
     width: 5.3rem;
+}
+
+#post_share {
+    width: 2rem;
 }
 
 #babypic {
@@ -107,20 +175,33 @@
     margin-bottom: 2rem;
 }
 
-#ellipsis2 {
-    border: none;
-    background-color: #ccc;
-    margin-left: 11rem;
-}
-
 @media screen and (min-width: 900px) {
     
     .feed-header {
         padding: 2rem 3rem;
     }
 
-    .feed-header div {
-        gap: 2rem;
+    .icon-set {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .feed-header h3 {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    #help {
+        display: flex;
+    }
+
+    #share {
+        padding: 0.8rem 1.5rem;
+        border: 2px solid #0D62C6;
+        border-radius: 3rem;
+        width: 30rem;
+        color: #333333;
+        font-weight: 600;
     }
 
     .share {
@@ -142,30 +223,59 @@
         padding: 2rem;
     }
 
-    #ellipsis {
-        border: none;
-        background-color: #ccc;
-        margin-left: 22rem;
-    }
-
-    #ellipsis2 {
-        border: none;
-        background-color: #ccc;
-        margin-left: 20rem;
-    }
-
     #babypic {
         width: 90%;
         margin: 2rem 3rem;
         text-align: center;
     }
 
-    .post {
+    .social-icon {
+        margin: 1rem 0 1rem 9rem;
+    }
+
+    #i-set {
+        width: 1.8rem;
+    }
+
+    .primary_post {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* gap: 17rem; */
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    #comments {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    #ellipsis {
+        border: none;
+        background-color: #ccc;
+        padding: 0.5rem;
+    }
+
+    .post_content {
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
     }
 
-    .social-icon {
-        margin: 1rem 0 3rem 9rem;
+    #add_comment {
+        margin-left: 6rem;
+        padding: 0.8rem 1rem;
+        width: 35rem;
+        border: 1.5px solid #0D62C6;
+        border-radius: 30px;
+        font-size: 12px;
     }
 
 }

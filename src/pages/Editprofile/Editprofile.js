@@ -209,6 +209,8 @@ const Editprofile = () => {
 
     // Notify user that pfp has been updated successfully
     if (response.status === 200) {
+      alert('Profile updated successfully')
+    
       window.location.reload(true);
     } else {
       alert("Failed to update profile");

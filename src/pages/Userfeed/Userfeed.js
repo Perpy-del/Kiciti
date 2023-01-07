@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./userfeed.css";
 import { Link } from "react-router-dom";
 import profileimage from "./images/newimages2.svg";
@@ -15,17 +15,106 @@ import notification from "./images/notifications.svg";
 import logout from "./images/logout.svg";
 import userprofile from "./images/user_profile.png";
 import home from "./images/home.svg";
+import { useNavigate } from "react-router-dom";
 
 const Userfeed = () => {
-  // const [ profile, setProfile ] = useState({ preview: "", data: "" });
+  const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [username, setUsername] = useState("");
+  // const [gender, setGender] = useState(genderOptions[0].value);
+  const [dob, setDob] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [country, setCountry] = useState("");
+  const [newPost, setNewPost] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(false);
 
-  // const handleFileChange = (e) => {
-  //   const img = {
-  //     preview: URL.createObjectURL(e.target.files[0]),
-  //     data: e.target.files[0],
-  //   };
-  //   setProfile(img);
-  // }
+  const user_token = localStorage.getItem("X-auth-token");
+  const user_id = localStorage.getItem("user_id");
+  const navigate = useNavigate();
+
+  // Fetch user details
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(
+        `http://34.228.198.103/api/users/${user_id}`,
+        {
+          method: "GET",
+          headers: {
+            "X-auth-token": user_token,
+          },
+        }
+      );
+      const data = await response.json();
+      setFirstName(data.first_name);
+      setMiddleName(data.middle_name);
+      setLastName(data.last_name);
+      setUsername(data.username);
+      setPhoneNumber(data.phone_number);
+      setCountry(data.country);
+      setDob(data.dob);
+    } catch (error) {
+      navigate("/login");
+    }
+  };
+
+  // Fetch posts from database
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch(
+        `http://34.228.198.103/api/posts?page=1&limit=30`,
+        {
+          method: "GET",
+          headers: {
+            "X-auth-token": user_token,
+          },
+        }
+      );
+      const data = await response.json();
+      setPosts(data.posts);
+    } catch (error) {
+      navigate("/login");
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+    fetchPosts();
+  }, []);
+
+  const uploadPost = async () => {
+    if (newPost === "" || newPost.length < 1) {
+      alert("Post can't be empty");
+      return;
+    }
+
+    // Upload post
+    try {
+      const body = JSON.stringify({
+        content: newPost,
+      });
+      console.log(body);
+      const response = await fetch(`http://34.228.198.103/api/posts/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-auth-token": user_token,
+        },
+        body: body,
+      });
+      const data = await response.json();
+
+      if (response.status >= 200 && response.status < 300) {
+        alert("Post sent");
+        window.location.reload();
+      } else {
+        alert("Error sending post");
+      }
+    } catch (error) {
+      // navigate("/login");
+    }
+  };
 
   return (
     <>
@@ -64,15 +153,23 @@ const Userfeed = () => {
 
       <div className="maincontainer">
         <div className="share">
-          <Link to="/editProfile" id="prof_img">
+          <Link to="/profile" id="prof_img">
             <img src={newimg} alt="profile-icon" />
           </Link>
-          <input type="text" placeholder="Share A Post" id="share" />
+          <input
+            type="text"
+            placeholder="Share A Post"
+            id="share"
+            value={newPost}
+            onChange={(e) => {
+              setNewPost(e.target.value);
+            }}
+          />
           <button type="submit" id="ph_submit">
             {" "}
             <img src={photo} alt="img" id="post_share" />{" "}
           </button>
-          <button type="submit" id="share_button">
+          <button type="submit" id="share_button" onClick={uploadPost}>
             Share Post
           </button>
         </div>

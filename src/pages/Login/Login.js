@@ -53,7 +53,7 @@ const Login = () => {
             localStorage.setItem("X-auth-token", user_token);
 
             // redirect to feed page and login user
-            navigate("/userfeed");
+            navigate("/posts");
         }
     }
 

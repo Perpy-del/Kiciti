@@ -40,7 +40,7 @@ const Home = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/userfeed' id='navlinks'>
+            <NavLink to='/posts' id='navlinks'>
               Posts
             </NavLink>
           </li>
@@ -83,7 +83,7 @@ const Home = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/userfeed' id='navlinks'>
+            <NavLink to='/posts' id='navlinks'>
               Posts
             </NavLink>
           </li>
@@ -126,28 +126,28 @@ const Home = () => {
           <img src={feed} alt='feed-icon' />
           <h1>Great Interactions</h1>
           <h3>Chatting has never been more interesting as you share your experience with other mothers</h3>
-          <Link to='/userfeed' id='start'>Start Chatting</Link>
+          <Link to='/posts' id='start'>Start Chatting</Link>
         </div>
 
         <div className='first-container'>
           <img src={post} alt='post-icon' />
           <h1>Great Posts&Views</h1>
           <h3>Get amazing posts and views of other beautiful and amazing mothers around you.</h3>
-          <Link to='/userfeed' id='start'>Start Viewing</Link>
+          <Link to='/posts' id='start'>Start Viewing</Link>
         </div>
 
         <div className='first-container'>
           <img src={social} alt='social-icon' />
           <h1>Great Responses</h1>
           <h3>Get 97 percent accurate responses to your good questions and preggy-related inquiries</h3>
-          <Link to='/userfeed' id='start'>Start Asking</Link>
+          <Link to='/posts' id='start'>Start Asking</Link>
         </div>
 
         <div className='first-container'>
           <img src={help} alt='help-icon' />
           <h1>Great Contributions</h1>
           <h3>Help someone get through the journey while getting the necessary help</h3>
-          <Link to='/userfeed' id='start'>Start Contributing</Link>
+          <Link to='/posts' id='start'>Start Contributing</Link>
         </div>
       </div>
 

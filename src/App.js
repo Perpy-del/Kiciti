@@ -14,12 +14,12 @@ const App = () => {
           <Route path = "/signup" element = {<Signup />} />
           <Route path = "login" element = {<Login />} />
           <Route path = "profile" element = {<Profile />} />
-          <Route path = "Editprofile" element = {<Editprofile />} />
-          <Route path = "Userfeed" element = {<Userfeed />}/>
-          <Route path = "Forgotpassword" element = {<Forgotpassword />} />
-          <Route path = "Verifyuser" element = {<Verifyuser />} />
-          <Route path = "Error" element = {<Error />} />
-          <Route path = "About" element = {<About />} />
+          <Route path = "editprofile" element = {<Editprofile />} />
+          <Route path = "posts" element = {<Userfeed />}/>
+          <Route path = "forgotpassword" element = {<Forgotpassword />} />
+          <Route path = "verifyuser" element = {<Verifyuser />} />
+          <Route path = "error" element = {<Error />} />
+          <Route path = "about" element = {<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>

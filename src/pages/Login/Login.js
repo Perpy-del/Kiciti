@@ -9,6 +9,7 @@ import facebook from '../Login/images/facebook_icon.svg';
 import google from '../Login/images/google_icon.svg';
 import chevron from '../Login/images/arrow_back.svg';
 
+
 const Login = () => {
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
@@ -52,9 +53,10 @@ const Login = () => {
             localStorage.setItem("X-auth-token", user_token);
 
             // redirect to feed page and login user
-            navigate("/");
+            navigate("/userfeed");
         }
     }
+
     return (
         <div className='container'>
             <img src={klogo} alt="Kiciti logo" id='klogo'/>
@@ -101,9 +103,10 @@ const Login = () => {
                 {/* <input id='create_btn' type='submit' value='LOG IN'/> */}
             </form>
 
-            <h5>Don't have an account? <Link to="/Loggedin" id='login'>Sign Up</Link></h5>
+            <h5>Don't have an account? <Link to="/signup" id='login'>Sign Up</Link></h5>
         </div>
     )
+ 
 }
 
 export default Login;

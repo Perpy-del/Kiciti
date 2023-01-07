@@ -83,7 +83,7 @@ const Signup = () => {
       localStorage.setItem("X-auth-token", user_token);
 
       // redirect to feed page and login user
-      navigate("/");
+      navigate("/posts");
     }
   }
 

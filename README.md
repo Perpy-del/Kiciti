@@ -8,11 +8,11 @@
 Most expectant mothers do not know what to expect throughout their pregnancy journey. Kiciti is a social media platform that connects expectant mothers together in a community where they can share helpful tips with each other and also gain more knowledge regarding pregnancy.
 
 ## The Team
-We are two first children of our parents who have heard stories from our mothers about how challenging the pregnancy to delivery process can be. This inspired us to work on this project. Meet the mummy's babies:
--  Toluwalase Phillips [@Lasephillips](twitter.com/lasephillips)
--  Perpetual Meninwa [@pominpirational](https://twitter.com/pominpirational)
+We are two first children of our parents who have heard stories from our mothers about how challenging the pregnancy to delivery process can be. This inspired us to work on this project. Meet mummy's babies:
+-  Toluwalase Phillips [@Teepee78](twitter.com/Teepee78)
+-  Perpetual Meninwa [@Perpy-del](https://twitter.com/Perpy-del)
 
-Follow us on twitter for more tech related gists...
+Follow us on github for more tech related gists...
 
 #### Dependencies/Tools
 The dependencies and tools used include:

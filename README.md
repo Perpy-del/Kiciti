@@ -14,19 +14,90 @@ We are two first children of our parents who have heard stories from our mothers
 
 Follow us on twitter for more tech related gists...
 
-# Setup/Intallation Requirement
-- Access GitHUb on any web browser.
-- Clone this 
+#### Dependencies/Tools
+The dependencies and tools used include:
+- React
+React is a javascript library for building user interfaces. It is declarative and component based making it so much easier to build interfaces from the frontend
+** Installing React--
+[Create React App](https://github.com/facebook/create-react-app).
+
+Ensure that node and npm is installed first. From your terminal:
+
 ```bash
-https://github.com/Perpy-del/Kiciti.git
+node -v
 ```
+
+```bash
+npm -v
+```
+
+Installing node and npm:
+
+```bash
+$ nvm use 16
+Now using node v16.9.1 (npm v7.21.1)
+$ node -v
+v16.9.1
+$ nvm use 14
+Now using node v14.18.0 (npm v6.14.15)
+$ node -v
+v14.18.0
+$ nvm install 12
+Now using node v12.22.6 (npm v6.14.5)
+$ node -v
+v12.22.6
+```
+
+Then install react using the same terminal:
+
+```bash
+npx create-react-app lendsqr
+```
+
+lensqr being the name of the app in this case.
+
+Then:
+
+```bash
+npm start
+```
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+- React Router Dom
+React router helps with routing between pages in your browser.
+
+Installing react-router-dom:
+
+```bash
+npm i react-router-dom
+```
+
+- Accessing Kiciti Project from GitHub
+
+On your browser,
+
+```bash
+https://github.com/Perpy-del/Kiciti
+```
+
+- Accessing Kiciti Project on GitHub 
+Access GitHub on any browser
+Copy and paste this
+```bash
+git clone https://github.com/Perpy-del/Kiciti.git
+```
+![Uploading kiciti.jpg…](C:\Users\USER\Desktop\kiciti.jpg)
+
 
 # Tutorial
 
 Here is our live demo. Please take a tour of the deployed site... 
 
-==>> [Kiciti]()
+==>> [Kiciti](https://kiciti.netlify.app/)
 
 Here is a little preview of the site...
+![Uploading kicitiapp.jpg…]()
 
-
+Thank you for reading. Enjoy~

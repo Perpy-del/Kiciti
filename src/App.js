@@ -1,6 +1,6 @@
 // import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {Home, Signup, Login, Profile, Editprofile, Userfeed, Forgotpassword, Verifyuser, Error, About } from "./pages/index";
+import {Home, Signup, Login, Profile, Editprofile, Posts, Forgotpassword, Verifyuser, Error, About } from "./pages/index";
 import React from 'react'
 
 import Footer from './Footer/Footer'
@@ -15,7 +15,7 @@ const App = () => {
           <Route path = "login" element = {<Login />} />
           <Route path = "profile" element = {<Profile />} />
           <Route path = "editprofile" element = {<Editprofile />} />
-          <Route path = "posts" element = {<Userfeed />}/>
+          <Route path = "posts" element = {<Posts />}/>
           <Route path = "forgotpassword" element = {<Forgotpassword />} />
           <Route path = "verifyuser" element = {<Verifyuser />} />
           <Route path = "error" element = {<Error />} />

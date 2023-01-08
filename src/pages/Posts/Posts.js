@@ -1,5 +1,5 @@
 import React from "react";
-import "./userfeed.css";
+import "./posts.css";
 import { Link } from "react-router-dom";
 import profileimage from "./images/newimages2.svg";
 import photo from "./images/photo-library.svg";
@@ -16,7 +16,7 @@ import logout from "./images/logout.svg";
 import userprofile from "./images/user_profile.png";
 import home from "./images/home.svg";
 
-const Userfeed = () => {
+const Posts = () => {
   // const [ profile, setProfile ] = useState({ preview: "", data: "" });
 
   // const handleFileChange = (e) => {
@@ -77,74 +77,77 @@ const Userfeed = () => {
           </button>
         </div>
 
-        <div className="post">
-          <div className="primary_post">
-            <img src={profileimage} alt="profile-icon" id="profile" />
-            <div className="post_content">
-              <h4>Van Nguyen</h4>
-              <h6>Today at 3:08 AM</h6>
-              <h6 id="comments">My baby will be here in two weeks</h6>
+        <div className="main-posts">
+          <div className="post">
+            <div className="primary_post">
+              <img src={profileimage} alt="profile-icon" id="profile" />
+              <div className="post_content">
+                <h4>Van Nguyen</h4>
+                <h6>Today at 3:08 AM</h6>
+                <h6 id="comments">My baby will be here in two weeks</h6>
+              </div>
             </div>
-          </div>
-          <div>
-            <img src={ellipsis} alt="ellipsis-icon" id="ellipsis" />
-          </div>
-        </div>
-        <div className="social-icon">
-          <div>
-            <button>
-              <img src={fav} alt="favorite-icon" />
-            </button>
-            <h6>1,223 Likes</h6>
-          </div>
-          <div>
-            <button>
-              <img src={comment} alt="comment" />
-            </button>
-            <h6>560 Comments</h6>
-          </div>
-        </div>
-
-        <div>
-          <input type="text" placeholder="Add a Comment" id="add_comment" />
-        </div>
-
-        <div className="post">
-          <div className="primary_post">
-            <img src={profile} alt="profile-icon" id="profile" />
-            <div className="post_content">
-              <h4>Me Bhan Ho</h4>
-              <h6>Just Now</h6>
-              <h6 id="comments">He is here and he is perfect</h6>
-            </div>
-          </div>
-          <div>
-            <button>
+            <div>
               <img src={ellipsis} alt="ellipsis-icon" id="ellipsis" />
-            </button>
+            </div>
+          </div>
+          <div className="social-icon">
+            <div>
+              <button>
+                <img src={fav} alt="favorite-icon" />
+              </button>
+              <h6>1,223 Likes</h6>
+            </div>
+            <div>
+              <button>
+                <img src={comment} alt="comment" />
+              </button>
+              <h6>560 Comments</h6>
+            </div>
+          </div>
+          <div>
+            <input type="text" placeholder="Add a Comment" id="add_comment" />
           </div>
         </div>
-        <img src={baby} alt="baby" id="babypic" />
-        <div className="social-icon">
-          <div>
-            <button>
-              <img src={fav} alt="favorite-icon" />
-            </button>
-            <h6>1,223 Likes</h6>
+
+        <div className="main-posts">
+          <div className="post">
+            <div className="primary_post">
+              <img src={profile} alt="profile-icon" id="profile" />
+              <div className="post_content">
+                <h4>Me Bhan Ho</h4>
+                <h6>Just Now</h6>
+                <h6 id="comments">He is here and he is perfect</h6>
+              </div>
+            </div>
+            <div>
+              <button>
+                <img src={ellipsis} alt="ellipsis-icon" id="ellipsis" />
+              </button>
+            </div>
+          </div>
+          <img src={baby} alt="baby" id="babypic" />
+          <div className="social-icon">
+            <div>
+              <button>
+                <img src={fav} alt="favorite-icon" />
+              </button>
+              <h6>1,223 Likes</h6>
+            </div>
+            <div>
+              <button>
+                <img src={comment} alt="comment" />
+              </button>
+              <h6>560 Comments</h6>
+            </div>
           </div>
           <div>
-            <button>
-              <img src={comment} alt="comment" />
-            </button>
-            <h6>560 Comments</h6>
+            <input type="text" placeholder="Add a Comment" id="add_comment" />
           </div>
-        </div>
-        <div>
-          <input type="text" placeholder="Add a Comment" id="add_comment" />
         </div>
       </div>
     </>
   );
 };
 
-export default Userfeed;
+export default Posts;

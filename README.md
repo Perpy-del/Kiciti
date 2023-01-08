@@ -1,6 +1,6 @@
 # KICITI - *The MUMMY's World*
 
-![Kiciti](<img src="./images/Kiciti Icon" />)
+![Kiciti logo](./src/assets/images/Kiciti%20Icon.svg)
 
 # Introduction
 

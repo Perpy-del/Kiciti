@@ -9,8 +9,8 @@ Most expectant mothers do not know what to expect throughout their pregnancy jou
 
 ## The Team
 We are two first children of our parents who have heard stories from our mothers about how challenging the pregnancy to delivery process can be. This inspired us to work on this project. Meet mummy's babies:
--  Toluwalase Phillips [@Teepee78](twitter.com/Teepee78)
--  Perpetual Meninwa [@Perpy-del](https://twitter.com/Perpy-del)
+-  Toluwalase Phillips [@Teepee78](github.com/Teepee78)
+-  Perpetual Meninwa [@Perpy-del](https://github.com/Perpy-del)
 
 Follow us on github for more tech related gists...
 

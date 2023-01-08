@@ -100,4 +100,7 @@ Here is our live demo. Please take a tour of the deployed site...
 Here is a little preview of the site...
 ![Kiciti app](./src/assets/images/kicitiapp.jpg)
 
+# License
+MIT
+
 Thank you for reading. Enjoy~

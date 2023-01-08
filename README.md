@@ -88,7 +88,7 @@ Copy and paste this
 ```bash
 git clone https://github.com/Perpy-del/Kiciti.git
 ```
-![Kiciti on GitHub]()
+![Kiciti on GitHub](./src/assets/images/kiciti.jpg)
 
 
 # Tutorial

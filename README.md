@@ -1,6 +1,6 @@
 # KICITI - *The MUMMY's World*
 
-![logo](file:///C:/Users/USER/Desktop/images/Kiciti%20RM.svg)
+![logo](\Kiciti\src\pages\Home\images)
 
 # Introduction
 

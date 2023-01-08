@@ -17,6 +17,7 @@ Follow us on github for more tech related gists...
 #### Dependencies/Tools
 The dependencies and tools used include:
 - React
+
 React is a javascript library for building user interfaces. It is declarative and component based making it so much easier to build interfaces from the frontend
 ** Installing React--
 [Create React App](https://github.com/facebook/create-react-app).
@@ -66,6 +67,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 - React Router Dom
+
 React router helps with routing between pages in your browser.
 
 Installing react-router-dom:
@@ -83,6 +85,7 @@ https://github.com/Perpy-del/Kiciti
 ```
 
 - Accessing Kiciti Project on GitHub 
+
 Access GitHub on any browser
 Copy and paste this
 ```bash

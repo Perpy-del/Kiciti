@@ -72,7 +72,70 @@ const Posts = () => {
         }
       );
       const data = await response.json();
-      setPosts(data.posts);
+      // console.log(data.posts);
+      const posts = [];
+
+      for (let post of data.posts) {
+        // Get user details
+        const user_response = await fetch(
+          `http://34.228.198.103/api/users/${post.user_id}`,
+          {
+            method: "GET",
+            headers: {
+              "X-auth-token": user_token,
+            },
+          }
+        );
+        const user = await user_response.json();
+        // console.log(user);
+
+        posts.push(
+          <div className="main-posts">
+            <div className="post">
+              <div className="primary_post">
+                <img src={profile} alt="profile-icon" id="profile" />
+                <div className="post_content">
+                  <h4>
+                    {user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)}
+                    {user.middle_name !== "" || user.middle_name !== undefined
+                      ? " " +
+                        user.middle_name.charAt(0).toUpperCase() +
+                        user.middle_name.slice(1)
+                      : ""}{" "}
+                    {user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}
+                  </h4>
+                  <h6>{(new Date(post.created_at)).toDateString()}</h6>
+                  <h6 id="comments">{post.content}</h6>
+                </div>
+              </div>
+              <div>
+                <button>
+                  <img src={ellipsis} alt="ellipsis-icon" id="ellipsis" />
+                </button>
+              </div>
+            </div>
+            {/* Render post image*/}
+            <div className="social-icon">
+              <div>
+                <button>
+                  <img src={fav} alt="favorite-icon" />
+                </button>
+                <h6>{post.likes.length}</h6>
+              </div>
+              <div>
+                <button>
+                  <img src={comment} alt="comment" />
+                </button>
+                <h6>{post.comments.length}</h6>
+              </div>
+            </div>
+            <div>
+              <input type="text" placeholder="Add a Comment" id="add_comment" />
+            </div>
+          </div>
+        );
+        setPosts(posts);
+      }
     } catch (error) {
       navigate("/login");
     }
@@ -174,7 +237,7 @@ const Posts = () => {
           </button>
         </div>
 
-        <div className="main-posts">
+        {/* <div className="main-posts">
           <div className="post">
             <div className="primary_post">
               <img src={profileimage} alt="profile-icon" id="profile" />
@@ -241,7 +304,9 @@ const Posts = () => {
           <div>
             <input type="text" placeholder="Add a Comment" id="add_comment" />
           </div>
-        </div>
+        </div> */}
+        
+        {posts}
       </div>
     </>
   );

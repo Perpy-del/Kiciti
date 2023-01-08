@@ -72,39 +72,31 @@ const Posts = () => {
         }
       );
       const data = await response.json();
-      // console.log(data.posts);
       const posts = [];
 
-      for (let post of data.posts) {
+      for (let post_obj of data.posts) {
         // Get user details
-        const user_response = await fetch(
-          `http://34.228.198.103/api/users/${post.user_id}`,
-          {
-            method: "GET",
-            headers: {
-              "X-auth-token": user_token,
-            },
-          }
-        );
-        const user = await user_response.json();
-        // console.log(user);
+        const post = post_obj.post;
+        const user = post_obj.user;
 
         posts.push(
-          <div className="main-posts">
+          <div className="main-posts" key={post._id}>
             <div className="post">
               <div className="primary_post">
                 <img src={profile} alt="profile-icon" id="profile" />
                 <div className="post_content">
                   <h4>
-                    {user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1)}
-                    {user.middle_name !== "" || user.middle_name !== undefined
+                    {user.first_name.charAt(0).toUpperCase() +
+                      user.first_name.slice(1)}
+                    {user.middle_name !== null
                       ? " " +
                         user.middle_name.charAt(0).toUpperCase() +
                         user.middle_name.slice(1)
                       : ""}{" "}
-                    {user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1)}
+                    {user.last_name.charAt(0).toUpperCase() +
+                      user.last_name.slice(1)}
                   </h4>
-                  <h6>{(new Date(post.created_at)).toDateString()}</h6>
+                  <h6>{new Date(post.created_at).toDateString()}</h6>
                   <h6 id="comments">{post.content}</h6>
                 </div>
               </div>
@@ -137,6 +129,7 @@ const Posts = () => {
         setPosts(posts);
       }
     } catch (error) {
+      console.error(error);
       navigate("/login");
     }
   };
@@ -305,7 +298,7 @@ const Posts = () => {
             <input type="text" placeholder="Add a Comment" id="add_comment" />
           </div>
         </div> */}
-        
+
         {posts}
       </div>
     </>

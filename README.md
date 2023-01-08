@@ -88,7 +88,7 @@ Copy and paste this
 ```bash
 git clone https://github.com/Perpy-del/Kiciti.git
 ```
-![Uploading kiciti.jpg…](C:\Users\USER\Desktop\kiciti.jpg)
+![Kiciti on GitHub](./src/assets/images/kiciti.jpg)
 
 
 # Tutorial
@@ -98,6 +98,6 @@ Here is our live demo. Please take a tour of the deployed site...
 ==>> [Kiciti](https://kiciti.netlify.app/)
 
 Here is a little preview of the site...
-![Uploading kicitiapp.jpg…]()
+![Kiciti app](./src/assets/images/kicitiapp.jpg)
 
 Thank you for reading. Enjoy~

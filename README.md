@@ -52,17 +52,16 @@ v12.22.6
 Then install react using the same terminal:
 
 ```bash
-npx create-react-app lendsqr
+npx create-react-app Kiciti
 ```
 
-lensqr being the name of the app in this case.
+Kiciti being the name of the app in this case.
 
 Then:
 
 ```bash
 npm start
 ```
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 

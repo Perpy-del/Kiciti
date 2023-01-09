@@ -112,6 +112,34 @@ input[type=date], input[type=submit], select {
     width: 500px;
 }
 
+#prof_pic {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#prof_pic img {
+    width: 50%;
+}
+
+.national {
+    border: 1px solid #0D62C6;
+    height: 3rem;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.national > select {
+    border: none;
+    height: 2rem;
+    width: 98%;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
 @media screen and (min-width: 900px) {
     .editprofile {
         width: 50%;
@@ -149,6 +177,34 @@ input[type=date], input[type=submit], select {
         color: white;
         font-size: 1rem;
         font-weight: 700;
+    }
+
+    #prof_pic {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #prof_pic img {
+        width: 50%;
+    }
+
+    .national {
+        border: 1px solid #0D62C6;
+        height: 3rem;
+        width: 100%;
+        padding: 0.25rem 1rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+    .national > select {
+        border: none;
+        height: 2rem;
+        width: 98%;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
     }
 
 }

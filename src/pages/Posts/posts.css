@@ -95,6 +95,7 @@
 #profile {
     border: 3px solid #0D62C6;
     border-radius: 5rem;
+    height: 5rem;
 }
 
 #ellipsis {
@@ -155,10 +156,6 @@ button {
     gap: 0.2rem;
 }
 
-#prof_img > img {
-    width: 3rem;
-}
-
 #profile {
     border-radius: 50rem;
     width: 5.3rem;
@@ -202,6 +199,12 @@ button {
         width: 30rem;
         color: #333333;
         font-weight: 600;
+    }
+
+    #posts_img {
+        width: 4rem;
+        height: 3.5rem;
+        border-radius: 100%;
     }
 
     .share {

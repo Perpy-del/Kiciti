@@ -147,40 +147,58 @@ const Profile = () => {
 
   return (
     <>
-      <Link to="/" className="prev_page">
+      {/* <Link to="/" className="prev_page">
         <img src={chevron} alt="chevron-back" />
         <h3>Back to previous page</h3>
-      </Link>
+      </Link> */}
       <div className="profile_container">
-        <div className="top_content">
-          <img className="pfp" src={pfp} alt="profile_image" />
-          <div>
-            <h3>200</h3>
-            <h4>Friends</h4>
-          </div>
-          <div>
-            <h3>1000</h3>
-            <h4>Posts</h4>
+        <div className="profile_content">
+          <img className="pfp" src={pfp} alt="profile_image" id="profile_image"/>
+          <div className="top_content">
+          
+            <div className="friends_posts">
+              <div>
+                <h3>200</h3>
+                <h3>Friends</h3>
+              </div>
+              <div>
+                <h3>1000</h3>
+                <h3>Posts</h3>
+              </div>
+            </div>
+
+            <div className="mid-content">
+              <h1>
+                {firstName.charAt(0).toUpperCase() + firstName.slice(1)}
+                {middleName !== null
+                  ? " " + middleName.charAt(0).toUpperCase() + middleName.slice(1)
+                  : ""}{" "}
+                {lastName.charAt(0).toUpperCase() + lastName.slice(1)}
+              </h1>
+              <h2>
+                @{username}
+              </h2>
+              <h3>
+                {country} 
+              </h3>
+              <h3> 
+                {phoneNumber}
+              </h3>
+              {/* <h3>About</h3>
+              <h4>
+                A happy mother of two lovely children who is also an accomplished
+                caterer.
+              </h4> */}
+              
+            </div>
           </div>
         </div>
 
-        <div className="mid-content">
-          <h1>
-            {firstName.charAt(0).toUpperCase() + firstName.slice(1)}
-            {middleName !== null
-              ? " " + middleName.charAt(0).toUpperCase() + middleName.slice(1)
-              : ""}{" "}
-            {lastName.charAt(0).toUpperCase() + lastName.slice(1)}
-          </h1>
-          <h3>About</h3>
-          <h4>
-            A happy mother of two lovely children who is also an accomplished
-            caterer.
-          </h4>
-          <Link to="/editProfile" id="edit_profile">
+        
+
+        <Link to="/editProfile" id="edit_profile">
             Edit Profile
           </Link>
-        </div>
 
         <div className="activity">
           <h2>Activity</h2>
@@ -192,7 +210,7 @@ const Profile = () => {
         </div>
 
         {/* <div className="post_view">
-          <img src={profileimage} alt="profile_image" />
+          <img src={profileimage} alt="profile_image" id="profile" />
           <div>
             <h5>Emily Vonne</h5>
             <h6>Today at 2:03 AM</h6>

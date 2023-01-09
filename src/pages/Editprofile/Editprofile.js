@@ -225,9 +225,10 @@ const Editprofile = () => {
             <img src={closebtn} alt="close" />
           </Link>
         </div>
-
-        {/* <img src={pfp} alt="Profile" /> */}
-        {pfp}
+{/* 
+        <div id="prof_pic">
+          {pfp}
+        </div> */}
 
         <form
           onSubmit={handleProfile}
@@ -236,6 +237,9 @@ const Editprofile = () => {
           className="form_con"
         >
           <div>
+          <div id="prof_pic">
+            {pfp}
+          </div>
             <h4> Change Profile Picture </h4> <br />
             <label htmlFor="photo">Profile Picture</label> <br />
             <input
@@ -246,7 +250,7 @@ const Editprofile = () => {
               name="pfp"
             />{" "}
             <br />
-            <input type="submit" value="Change Image" />
+            <input type="submit" value="Change Image" id="change_img" />
           </div>{" "}
           <br /> <br /> <br /> <br />
         </form>
@@ -325,7 +329,8 @@ const Editprofile = () => {
             }}
           />{" "}
           <br />
-          <div className="input_field">
+          <label htmlFor="lname">Country of residence</label> <br />
+          <div className="national">
             <img src={location} alt="country_icon" />
             <select
               onChange={(e) => {
@@ -335,7 +340,6 @@ const Editprofile = () => {
               id="country"
               name="country"
             >
-              <option>Country of residence</option>
               <option>Afghanistan</option>
               <option>Albania</option>
               <option>Algeria</option>

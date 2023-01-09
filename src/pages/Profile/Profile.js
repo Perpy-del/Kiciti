@@ -221,7 +221,7 @@ const Profile = () => {
           </button>
         </div>
         <div className="post_view">
-          <img src={profileimage} alt="profile_image" />
+          <img src={profileimage} alt="profile_image" id="profile" />
           <div>
             <h5>Emily Vonne</h5>
             <h6>Today at 7:45 PM</h6>

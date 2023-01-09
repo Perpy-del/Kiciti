@@ -18,14 +18,6 @@ import home from "./images/home.svg";
 import { useNavigate } from "react-router-dom";
 
 const Posts = () => {
-  const [firstName, setFirstName] = useState("");
-  const [middleName, setMiddleName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [username, setUsername] = useState("");
-  // const [gender, setGender] = useState(genderOptions[0].value);
-  const [dob, setDob] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [country, setCountry] = useState("");
   const [newPost, setNewPost] = useState("");
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
@@ -35,6 +27,12 @@ const Posts = () => {
   const user_token = localStorage.getItem("X-auth-token");
   const user_id = localStorage.getItem("user_id");
   const navigate = useNavigate();
+
+  // Check if user is logged in
+  if (user_id === null) {
+    alert("You must be logged in");
+    navigate("/login");
+  }
 
   // Fetch user details
   const fetchUser = async () => {
@@ -49,13 +47,6 @@ const Posts = () => {
         }
       );
       const data = await response.json();
-      setFirstName(data.first_name);
-      setMiddleName(data.middle_name);
-      setLastName(data.last_name);
-      setUsername(data.username);
-      setPhoneNumber(data.phone_number);
-      setCountry(data.country);
-      setDob(data.dob);
     } catch (error) {
       navigate("/login");
     }
@@ -182,7 +173,7 @@ const Posts = () => {
   };
 
   useEffect(() => {
-    fetchUser();
+    // fetchUser();
     fetchPosts();
     fetchPfp();
   }, []);
@@ -220,6 +211,11 @@ const Posts = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("X-auth-token");
+    localStorage.removeItem("user_id");
+  };
+
   return (
     <>
       <div className="feed-header">
@@ -249,7 +245,7 @@ const Posts = () => {
           </div>
         </div>
         <div>
-          <Link to="/login" id="logout">
+          <Link to="/login" id="logout" onClick={handleLogout}>
             <img src={logout} alt="logout-icon" id="i-set" />
           </Link>
         </div>

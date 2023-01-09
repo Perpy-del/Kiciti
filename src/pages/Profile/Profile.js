@@ -16,6 +16,7 @@ const Profile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [error, setError] = useState(false);
+  const [pfp, setPfp] = useState("");
 
   const user_token = localStorage.getItem("X-auth-token");
   const user_id = localStorage.getItem("user_id");
@@ -46,8 +47,29 @@ const Profile = () => {
     }
   };
 
+  const fetchPfp = async () => {
+    try {
+      const response = await fetch(
+        `http://34.228.198.103/api/users/${user_id}/pfp`,
+        {
+          method: "GET",
+          headers: {
+            "X-auth-token": user_token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const blob = await response.blob();
+      const image = URL.createObjectURL(blob);
+      setPfp(image);
+    } catch (error) {
+      navigate("/login");
+    }
+  };
+
   useEffect(() => {
     fetchUser();
+    fetchPfp();
   }, []);
 
   return (
@@ -58,7 +80,7 @@ const Profile = () => {
       </Link>
       <div className="profile_container">
         <div className="top_content">
-          <img src={profileimage} alt="profile_image" />
+          <img className="pfp" src={pfp} alt="profile_image" />
           <div>
             <h3>200</h3>
             <h4>Friends</h4>

@@ -152,6 +152,10 @@ body {
     align-self: flex-start;
 }
 
+.top_content .pfp {
+    width: 100%;
+}
+
 @media screen and (min-width: 900px) {
 
     .profile_container {

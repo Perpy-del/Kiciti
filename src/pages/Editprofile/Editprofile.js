@@ -32,8 +32,13 @@ const Editprofile = () => {
   const [new_password, setNewPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
+  const [pfp, setPfp] = useState("");
 
   const navigate = useNavigate();
+  // Get User ID
+  const user_id = localStorage.getItem("user_id");
+  // Get user authentication token
+  const user_token = localStorage.getItem("X-auth-token");
 
   // Fetch user details
   const fetchUser = async () => {
@@ -63,9 +68,7 @@ const Editprofile = () => {
   const fetchPfp = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${localStorage.getItem(
-          "user_id"
-        )}/pfp`,
+        `http://34.228.198.103/api/users/${user_id}/pfp`,
         {
           method: "GET",
           headers: {
@@ -74,7 +77,11 @@ const Editprofile = () => {
           },
         }
       );
-      console.log(response);
+      const blob = await response.blob();
+      const image = (
+        <img className="pfp" src={URL.createObjectURL(blob)} alt="Profile" />
+      );
+      setPfp(image);
     } catch (error) {
       navigate("/login");
     }
@@ -107,11 +114,6 @@ const Editprofile = () => {
   const handleProfile = async (e) => {
     e.preventDefault();
 
-    // Get User ID
-    const user_id = localStorage.getItem("user_id");
-    // Get user authentication token
-    const user_token = localStorage.getItem("X-auth-token");
-
     const formData = new FormData();
     profile.data.filename = profile.data.name;
     delete profile.data.name;
@@ -129,7 +131,8 @@ const Editprofile = () => {
     );
 
     // Notify user that pfp has been updated successfully
-    if (response.status === 200) {
+    if (response.status === 201) {
+      console.log("pfp updated successfully");
       alert("Profile picture updated successfully");
       window.location.reload(true);
     }
@@ -148,11 +151,6 @@ const Editprofile = () => {
       alert("Please enter password correctly");
       return;
     }
-
-    // Get User ID
-    const user_id = localStorage.getItem("user_id");
-    // Get user authentication token
-    const user_token = localStorage.getItem("X-auth-token");
 
     const body = JSON.stringify({
       old_password: old_password,
@@ -210,8 +208,8 @@ const Editprofile = () => {
 
     // Notify user that pfp has been updated successfully
     if (response.status === 200) {
-      alert('Profile updated successfully')
-    
+      alert("Profile updated successfully");
+
       window.location.reload(true);
     } else {
       alert("Failed to update profile");
@@ -228,13 +226,8 @@ const Editprofile = () => {
           </Link>
         </div>
 
-        <img
-          // src={`http://34.228.198.103/api/users/${localStorage.getItem(
-          //   "user_id"
-          // )}/pfp`}
-          src="https://kiciti.s3.amazonaws.com/pfp-63a0ebb4a73f55168ad68c7b.jpg"
-          alt="Profile"
-        />
+        {/* <img src={pfp} alt="Profile" /> */}
+        {pfp}
 
         <form
           onSubmit={handleProfile}

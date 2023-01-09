@@ -29,6 +29,8 @@ const Posts = () => {
   const [newPost, setNewPost] = useState("");
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
+  const [pfp, setPfp] = useState("");
+  const [images, setImages] = useState({});
 
   const user_token = localStorage.getItem("X-auth-token");
   const user_id = localStorage.getItem("user_id");
@@ -78,12 +80,37 @@ const Posts = () => {
         // Get user details
         const post = post_obj.post;
         const user = post_obj.user;
+        let image;
+
+        // fetch user profile picture
+        try {
+          // check cache for user image
+          if (user._id in images) {
+            image = images[user._id];
+          } else {
+            const response = await fetch(
+              `http://34.228.198.103/api/users/${user._id}/pfp`,
+              {
+                method: "GET",
+                headers: {
+                  "X-auth-token": user_token,
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            let blob = await response.blob();
+            image = URL.createObjectURL(blob);
+            images[user._id] = image;
+          }
+        } catch (error) {
+          navigate("/login");
+        }
 
         posts.push(
           <div className="main-posts" key={post._id}>
             <div className="post">
               <div className="primary_post">
-                <img src={profile} alt="profile-icon" id="profile" />
+                <img src={image} alt="profile-icon" id="profile" />
                 <div className="post_content">
                   <h4>
                     {user.first_name.charAt(0).toUpperCase() +
@@ -134,9 +161,30 @@ const Posts = () => {
     }
   };
 
+  const fetchPfp = async () => {
+    try {
+      const response = await fetch(
+        `http://34.228.198.103/api/users/${user_id}/pfp`,
+        {
+          method: "GET",
+          headers: {
+            "X-auth-token": user_token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const blob = await response.blob();
+      const image = URL.createObjectURL(blob);
+      setPfp(image);
+    } catch (error) {
+      navigate("/login");
+    }
+  };
+
   useEffect(() => {
     fetchUser();
     fetchPosts();
+    fetchPfp();
   }, []);
 
   const uploadPost = async () => {
@@ -210,7 +258,7 @@ const Posts = () => {
       <div className="maincontainer">
         <div className="share">
           <Link to="/profile" id="prof_img">
-            <img src={newimg} alt="profile-icon" />
+            <img src={pfp} alt="profile-icon" />
           </Link>
           <input
             type="text"

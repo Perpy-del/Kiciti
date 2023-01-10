@@ -1,284 +1,315 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .feed-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0D62C6;
-    padding: 1rem;
-    margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0d62c6;
+  padding: 1rem;
+  margin-bottom: 3rem;
 }
 
 #help {
-    display: none;
+  display: none;
 }
 
 .icon-set {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .feed-header h3 {
-    color: white;
-    font-size: 0.8rem;
+  color: white;
+  font-size: 0.8rem;
 }
 
 .maincontainer {
-    width: 95%;
-    margin: 0 auto;
+  width: 95%;
+  margin: 0 auto;
 }
 
 #i-set {
-    width: 1.2rem;
+  width: 1.2rem;
 }
 
 .share {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid #ccc; 
+    flex-direction: column;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.upload {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.post_images {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+.post_images img {
+    width: 20rem;
+}
+
+.post_image {
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid #ccc; */
+    padding: 20px;
+}
+
+.post_image img {
+    width: 20rem;
 }
 
 #share {
-    padding: 0.8rem 1.5rem;
-    border: 2px solid #0D62C6;
-    border-radius: 3rem;
-    width: 14rem;
-    color: #333333;
-    font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #0d62c6;
+  border-radius: 3rem;
+  width: 14rem;
+  color: #333333;
+  font-weight: 600;
 }
 
 #share_button {
-    border: 2px solid #0D62C6;
-    border-radius: 5px;
-    background-color: #0D62C6;
-    color: white;
-    font-weight: 700;
-    padding: 0.5rem;
-    cursor: pointer;
+  border: 2px solid #0d62c6;
+  border-radius: 5px;
+  background-color: #0d62c6;
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.3rem 1rem;
-    background-color: white;
-    border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 1rem;
+  background-color: white;
+  border-radius: 2rem;
 }
 
 .search input {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 #ph_submit {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .post {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.5rem;
 }
 
 #profile {
-    border: 3px solid #0D62C6;
-    border-radius: 5rem;
-    height: 5rem;
+  border: 3px solid #0d62c6;
+  border-radius: 5rem;
+  height: 5rem;
 }
 
 #ellipsis {
-    border: none;
-    background-color: #ccc;
-    padding: 0.5rem;
-    border-radius: 3rem;
+  border: none;
+  background-color: #ccc;
+  padding: 0.5rem;
+  border-radius: 3rem;
 }
 
 .post > div > h6 {
-    color: #333333;
+  color: #333333;
 }
 
 button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 #comments {
-    color: black;
-    font-size: 12px;
+  color: black;
+  font-size: 12px;
 }
 
 .primary_post {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .post_content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .social-icon {
-    display: flex;
-    margin: 0 auto;
-    gap: 2rem;
-    margin-left: 7rem;
-    margin-bottom: 1rem;
+  display: flex;
+  margin: 0 auto;
+  gap: 2rem;
+  margin-left: 7rem;
+  margin-bottom: 1rem;
 }
 
 #add_comment {
-    margin-left: 6rem;
-    padding: 0.5rem 1rem;
-    width: 20rem;
-    border: 1.5px solid #0D62C6;
-    border-radius: 30px;
-    font-size: 12px;
+  margin-left: 6rem;
+  padding: 0.5rem 1rem;
+  width: 20rem;
+  border: 1.5px solid #0d62c6;
+  border-radius: 30px;
+  font-size: 12px;
 }
 
 .social-icon div {
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 #profile {
-    border-radius: 50rem;
-    width: 5.3rem;
+  border-radius: 50rem;
+  width: 5.3rem;
 }
 
 #post_share {
-    width: 2rem;
+  width: 2rem;
+}
+
+#post_share:hover {
+  cursor: pointer;
 }
 
 #babypic {
-    width: 100%;
-    margin-top: 1rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+#post_images {
+  display: none;
 }
 
 @media screen and (min-width: 900px) {
-    
-    .feed-header {
-        padding: 2rem 3rem;
-    }
+  .feed-header {
+    padding: 2rem 3rem;
+  }
 
-    .icon-set {
-        display: flex;
-        gap: 3rem;
-    }
+  .icon-set {
+    display: flex;
+    gap: 3rem;
+  }
 
-    .feed-header h3 {
-        color: white;
-        font-size: 1.2rem;
-    }
+  .feed-header h3 {
+    color: white;
+    font-size: 1.2rem;
+  }
 
-    #help {
-        display: flex;
-    }
+  #help {
+    display: flex;
+  }
 
-    #share {
-        padding: 0.8rem 1.5rem;
-        border: 2px solid #0D62C6;
-        border-radius: 3rem;
-        width: 30rem;
-        color: #333333;
-        font-weight: 600;
-    }
+  #share {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #0d62c6;
+    border-radius: 3rem;
+    width: 30rem;
+    color: #333333;
+    font-weight: 600;
+  }
 
-    #posts_img {
-        width: 4rem;
-        height: 3.5rem;
-        border-radius: 100%;
-    }
+  #posts_img {
+    width: 4rem;
+    height: 3.5rem;
+    border-radius: 100%;
+  }
 
-    .share {
-        gap: 0.3rem;
-    }
+  .upload img {
+    width: 2.5rem;
+  }
 
-    .share img {
-        width: 2.5rem;
-    }
+  .upload input {
+    padding: 0.75rem 2rem;
+    width: 35rem;
+  }
 
-    .share input {
-        padding: 0.75rem 2rem;
-        width: 35rem;
-    }
+  .maincontainer {
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 2rem;
+  }
 
-    .maincontainer {
-        width: 60%;
-        border: 1px solid #ccc;
-        padding: 2rem;
-    }
+  #babypic {
+    width: 90%;
+    margin: 2rem 3rem;
+    text-align: center;
+  }
 
-    #babypic {
-        width: 90%;
-        margin: 2rem 3rem;
-        text-align: center;
-    }
+  .social-icon {
+    margin: 1rem 0 1rem 9rem;
+  }
 
-    .social-icon {
-        margin: 1rem 0 1rem 9rem;
-    }
+  #i-set {
+    width: 1.8rem;
+  }
 
-    #i-set {
-        width: 1.8rem;
-    }
+  .primary_post {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 17rem; */
+  }
 
-    .primary_post {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        /* gap: 17rem; */
-    }
+  h4 {
+    font-size: 1.2rem;
+  }
 
-    h4 {
-        font-size: 1.2rem;
-    }
+  h6 {
+    font-size: 12px;
+  }
 
-    h6 {
-        font-size: 12px;
-    }
+  #comments {
+    font-size: 0.9rem;
+    width: 100%;
+  }
 
-    #comments {
-        font-size: 0.9rem;
-        width: 100%;
-    }
+  #ellipsis {
+    border: none;
+    background-color: #ccc;
+    padding: 0.5rem;
+  }
 
-    #ellipsis {
-        border: none;
-        background-color: #ccc;
-        padding: 0.5rem;
-    }
+  .post_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .post_content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #add_comment {
-        margin-left: 6rem;
-        padding: 0.8rem 1rem;
-        width: 35rem;
-        border: 1.5px solid #0D62C6;
-        border-radius: 30px;
-        font-size: 12px;
-    }
-
+  #add_comment {
+    margin-left: 6rem;
+    padding: 0.8rem 1rem;
+    width: 35rem;
+    border: 1.5px solid #0d62c6;
+    border-radius: 30px;
+    font-size: 12px;
+  }
 }

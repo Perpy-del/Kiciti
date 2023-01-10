@@ -143,15 +143,19 @@ const Profile = () => {
   useEffect(() => {
     fetchUser();
     fetchPfp();
-    fetchPosts();
+    // fetchPosts();
   }, []);
+
+  useEffect(() => {
+    fetchPosts();
+  },[pfp]);
 
   return (
     <>
-      {/* <Link to="/" className="prev_page">
+      <Link to="/" className="prev_page">
         <img src={chevron} alt="chevron-back" />
         <h3>Back to previous page</h3>
-      </Link> */}
+      </Link>
       <div className="profile_container">
         <div className="profile_content">
           <img

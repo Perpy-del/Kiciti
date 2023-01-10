@@ -23,6 +23,7 @@ const Posts = () => {
   const [error, setError] = useState(false);
   const [pfp, setPfp] = useState("");
   const [images, setImages] = useState({});
+  const [postImages, setPostImages] = useState([]);
 
   const user_token = localStorage.getItem("X-auth-token");
   const user_id = localStorage.getItem("user_id");
@@ -124,7 +125,18 @@ const Posts = () => {
                 </button>
               </div>
             </div>
+
             {/* Render post image*/}
+            {post.images.length > 0 ? (
+              <div className="post_image">
+                {post.images.map((image) => {
+                  return <img src={image} alt="post_image" key={image} />;
+                })}
+              </div>
+            ) : (
+              ""
+            )}
+
             <div className="social-icon">
               <div>
                 <button>
@@ -173,7 +185,7 @@ const Posts = () => {
   };
 
   useEffect(() => {
-    // fetchUser();
+    fetchUser();
     fetchPosts();
     fetchPfp();
   }, []);
@@ -186,17 +198,21 @@ const Posts = () => {
 
     // Upload post
     try {
-      const body = JSON.stringify({
-        content: newPost,
-      });
-      console.log(body);
+      const formData = new FormData();
+
+      for (let image of postImages) {
+        image.data.filename = image.data.name;
+        delete image.data.name;
+        formData.append("images", image.data);
+      }
+      formData.append("content", newPost);
+
       const response = await fetch(`http://34.228.198.103/api/posts/`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           "X-auth-token": user_token,
         },
-        body: body,
+        body: formData,
       });
       const data = await response.json();
 
@@ -214,6 +230,18 @@ const Posts = () => {
   const handleLogout = () => {
     localStorage.removeItem("X-auth-token");
     localStorage.removeItem("user_id");
+  };
+
+  const handleFileChange = (e) => {
+    let imgs = [];
+    for (let file of e.target.files) {
+      const img = {
+        preview: URL.createObjectURL(file),
+        data: file,
+      };
+      imgs.push(img);
+    }
+    setPostImages(imgs);
   };
 
   return (
@@ -253,26 +281,54 @@ const Posts = () => {
 
       <div className="maincontainer">
         <div className="share">
-          <Link to="/profile" id="prof_img">
-            {/* adjust this */}
-            <img src={pfp} alt="profile-icon" id="posts_img" />
-          </Link>
-          <input
-            type="text"
-            placeholder="Share A Post"
-            id="share"
-            value={newPost}
-            onChange={(e) => {
-              setNewPost(e.target.value);
-            }}
-          />
-          <button type="submit" id="ph_submit">
-            {" "}
-            <img src={photo} alt="img" id="post_share" />{" "}
-          </button>
-          <button type="submit" id="share_button" onClick={uploadPost}>
-            Share Post
-          </button>
+          <div className="upload">
+            <Link to="/profile" id="prof_img">
+              {/* adjust this */}
+              <img src={pfp} alt="profile-icon" id="posts_img" />
+            </Link>
+            <input
+              type="text"
+              placeholder="Share A Post"
+              id="share"
+              value={newPost}
+              onChange={(e) => {
+                setNewPost(e.target.value);
+              }}
+            />
+            <button type="submit" id="ph_submit">
+              {" "}
+              <label htmlFor="post_images">
+                <img src={photo} alt="img" id="post_share" />{" "}
+              </label>
+              <input
+                onChange={handleFileChange}
+                accept="image/*"
+                type="file"
+                id="post_images"
+                name="post_images"
+                multiple="true"
+              />{" "}
+            </button>
+            <button type="submit" id="share_button" onClick={uploadPost}>
+              Share Post
+            </button>
+          </div>
+
+          {postImages.length > 0 ? (
+            <div className="post_images">
+              {postImages.map((image) => {
+                return (
+                  <img
+                    key={image.data.name}
+                    src={image.preview}
+                    alt="post_image"
+                  />
+                );
+              })}
+            </div>
+          ) : (
+            ""
+          )}
         </div>
 
         {/* <div className="main-posts">

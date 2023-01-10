@@ -225,7 +225,7 @@ const Editprofile = () => {
             <img src={closebtn} alt="close" />
           </Link>
         </div>
-{/* 
+        {/* 
         <div id="prof_pic">
           {pfp}
         </div> */}
@@ -237,9 +237,7 @@ const Editprofile = () => {
           className="form_con"
         >
           <div>
-          <div id="prof_pic">
-            {pfp}
-          </div>
+            <div id="prof_pic">{pfp}</div>
             <h4> Change Profile Picture </h4> <br />
             <label htmlFor="photo">Profile Picture</label> <br />
             <input

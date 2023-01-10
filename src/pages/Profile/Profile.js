@@ -73,12 +73,15 @@ const Profile = () => {
   // Fetch posts from database
   const fetchPosts = async () => {
     try {
-      const response = await fetch(`http://34.228.198.103/api/posts/${user_id}`, {
-        method: "GET",
-        headers: {
-          "X-auth-token": user_token,
-        },
-      });
+      const response = await fetch(
+        `http://34.228.198.103/api/posts/${user_id}`,
+        {
+          method: "GET",
+          headers: {
+            "X-auth-token": user_token,
+          },
+        }
+      );
       const data = await response.json();
       const posts = [];
 
@@ -94,15 +97,13 @@ const Profile = () => {
                 <img src={pfp} alt="profile-icon" id="profile" />
                 <div className="post_content">
                   <h4>
-                    {firstName.charAt(0).toUpperCase() +
-                      firstName.slice(1)}
+                    {firstName.charAt(0).toUpperCase() + firstName.slice(1)}
                     {middleName !== null
                       ? " " +
                         middleName.charAt(0).toUpperCase() +
                         middleName.slice(1)
                       : ""}{" "}
-                    {lastName.charAt(0).toUpperCase() +
-                      lastName.slice(1)}
+                    {lastName.charAt(0).toUpperCase() + lastName.slice(1)}
                   </h4>
                   <h6>{new Date(post.created_at).toDateString()}</h6>
                   <h6 id="comments">{post.content}</h6>
@@ -153,9 +154,13 @@ const Profile = () => {
       </Link> */}
       <div className="profile_container">
         <div className="profile_content">
-          <img className="pfp" src={pfp} alt="profile_image" id="profile_image"/>
+          <img
+            className="pfp"
+            src={pfp}
+            alt="profile_image"
+            id="profile_image"
+          />
           <div className="top_content">
-          
             <div className="friends_posts">
               <div>
                 <h3>200</h3>
@@ -171,34 +176,27 @@ const Profile = () => {
               <h1>
                 {firstName.charAt(0).toUpperCase() + firstName.slice(1)}
                 {middleName !== null
-                  ? " " + middleName.charAt(0).toUpperCase() + middleName.slice(1)
+                  ? " " +
+                    middleName.charAt(0).toUpperCase() +
+                    middleName.slice(1)
                   : ""}{" "}
                 {lastName.charAt(0).toUpperCase() + lastName.slice(1)}
               </h1>
-              <h2>
-                @{username}
-              </h2>
-              <h3>
-                {country} 
-              </h3>
-              <h3> 
-                {phoneNumber}
-              </h3>
+              <h2>@{username}</h2>
+              <h3>{country}</h3>
+              <h3>{phoneNumber}</h3>
               {/* <h3>About</h3>
               <h4>
                 A happy mother of two lovely children who is also an accomplished
                 caterer.
               </h4> */}
-              
             </div>
           </div>
         </div>
 
-        
-
         <Link to="/editProfile" id="edit_profile">
-            Edit Profile
-          </Link>
+          Edit Profile
+        </Link>
 
         <div className="activity">
           <h2>Activity</h2>

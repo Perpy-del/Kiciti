@@ -255,7 +255,7 @@ const Posts = () => {
         <div className="share">
           <Link to="/profile" id="prof_img">
             {/* adjust this */}
-            <img src={pfp} alt="profile-icon" id="posts_img"/>
+            <img src={pfp} alt="profile-icon" id="posts_img" />
           </Link>
           <input
             type="text"

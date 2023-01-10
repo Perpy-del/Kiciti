@@ -115,7 +115,18 @@ const Profile = () => {
                 </button>
               </div>
             </div>
+
             {/* Render post image*/}
+            {post.images.length > 0 ? (
+              <div className="post_image">
+                {post.images.map((image) => {
+                  return <img src={image} alt="post_image" key={image} />;
+                })}
+              </div>
+            ) : (
+              ""
+            )}
+
             <div className="social-icon">
               <div>
                 <button>
@@ -148,7 +159,7 @@ const Profile = () => {
 
   useEffect(() => {
     fetchPosts();
-  },[pfp]);
+  }, [pfp]);
 
   return (
     <>

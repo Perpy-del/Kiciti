@@ -79,7 +79,7 @@
   padding: 0.8rem 1.5rem;
   border: 2px solid #0d62c6;
   border-radius: 3rem;
-  width: 14rem;
+  width: 24rem;
   color: #333333;
   font-weight: 600;
 }
@@ -123,8 +123,9 @@
 
 #profile {
   border: 3px solid #0d62c6;
-  border-radius: 5rem;
-  height: 5rem;
+  border-radius: 100%;
+  height: 5.2rem;
+  /* width: 3rem; */
 }
 
 #ellipsis {
@@ -205,6 +206,12 @@ button {
   margin-bottom: 2rem;
 }
 
+#posts_img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+}
+
 #post_images {
   display: none;
 }
@@ -239,7 +246,7 @@ button {
 
   #posts_img {
     width: 4rem;
-    height: 3.5rem;
+    height: 4rem;
     border-radius: 100%;
   }
 

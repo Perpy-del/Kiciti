@@ -29,7 +29,7 @@ const Profile = () => {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${user_id}`,
+        `https://api.alexius.tech/api/users/${user_id}`,
         {
           method: "GET",
           headers: {
@@ -53,7 +53,7 @@ const Profile = () => {
   const fetchPfp = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${user_id}/pfp`,
+        `https://api.alexius.tech/api/users/${user_id}/pfp`,
         {
           method: "GET",
           headers: {
@@ -74,7 +74,7 @@ const Profile = () => {
   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/posts/${user_id}`,
+        `https://api.alexius.tech/api/posts/${user_id}`,
         {
           method: "GET",
           headers: {

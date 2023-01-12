@@ -44,7 +44,7 @@ const Editprofile = () => {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${localStorage.getItem("user_id")}`,
+        `https://api.alexius.tech/api/users/${localStorage.getItem("user_id")}`,
         {
           method: "GET",
           headers: {
@@ -68,7 +68,7 @@ const Editprofile = () => {
   const fetchPfp = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${user_id}/pfp`,
+        `https://api.alexius.tech/api/users/${user_id}/pfp`,
         {
           method: "GET",
           headers: {
@@ -120,7 +120,7 @@ const Editprofile = () => {
     formData.append("pfp", profile.data);
 
     const response = await fetch(
-      `http://34.228.198.103/api/users/${user_id}/pfp`,
+      `https://api.alexius.tech/api/users/${user_id}/pfp`,
       {
         method: "POST",
         headers: {
@@ -158,7 +158,7 @@ const Editprofile = () => {
     });
 
     const response = await fetch(
-      `http://34.228.198.103/api/users/${user_id}/password`,
+      `https://api.alexius.tech/api/users/${user_id}/password`,
       {
         method: "PUT",
         headers: {
@@ -197,7 +197,7 @@ const Editprofile = () => {
       country: country,
     });
 
-    const response = await fetch(`http://34.228.198.103/api/users/${user_id}`, {
+    const response = await fetch(`https://api.alexius.tech/api/users/${user_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

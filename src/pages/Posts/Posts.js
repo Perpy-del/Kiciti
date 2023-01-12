@@ -39,7 +39,7 @@ const Posts = () => {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${user_id}`,
+        `https://api.alexius.tech/api/users/${user_id}`,
         {
           method: "GET",
           headers: {
@@ -57,7 +57,7 @@ const Posts = () => {
   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/posts?page=1&limit=30`,
+        `https://api.alexius.tech/api/posts?page=1&limit=30`,
         {
           method: "GET",
           headers: {
@@ -81,7 +81,7 @@ const Posts = () => {
             image = images[user._id];
           } else {
             const response = await fetch(
-              `http://34.228.198.103/api/users/${user._id}/pfp`,
+              `https://api.alexius.tech/api/users/${user._id}/pfp`,
               {
                 method: "GET",
                 headers: {
@@ -167,7 +167,7 @@ const Posts = () => {
   const fetchPfp = async () => {
     try {
       const response = await fetch(
-        `http://34.228.198.103/api/users/${user_id}/pfp`,
+        `https://api.alexius.tech/api/users/${user_id}/pfp`,
         {
           method: "GET",
           headers: {
@@ -207,7 +207,7 @@ const Posts = () => {
       }
       formData.append("content", newPost);
 
-      const response = await fetch(`http://34.228.198.103/api/posts/`, {
+      const response = await fetch(`https://api.alexius.tech/api/posts/`, {
         method: "POST",
         headers: {
           "X-auth-token": user_token,

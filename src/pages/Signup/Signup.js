@@ -51,7 +51,7 @@ const Signup = () => {
       // console.log("Username", username, "First Name", fname, "Last Name", lname, "Email", email, "Password", password, "Country", country, "Gender", gender, "Confirm Password", cpassword, "Date of Birth", dob)
     }
 
-    const response = await fetch("http://34.228.198.103/api/users/signup", {
+    const response = await fetch("https://api.alexius.tech/api/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
